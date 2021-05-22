@@ -158,8 +158,11 @@
         </view>
     </objects>
     <designables>
+        <designable name="brk-ds-kqp">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="cU3-y8-hXx">
-            <size key="intrinsicContentSize" width="39" height="29"/>
+            <size key="intrinsicContentSize" width="51" height="34"/>
         </designable>
     </designables>
     <resources>

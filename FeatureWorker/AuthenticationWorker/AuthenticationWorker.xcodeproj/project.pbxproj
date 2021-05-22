@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FDDEA098FA7F2329B396271 /* AuthenticationWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1E354930C14DBE1E101A07 /* AuthenticationWorkerTests.swift */; };
+		2EF0FB9511BEB0413F74E14F /* AuthenticationWorkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E6378389C9FAAED51D827 /* AuthenticationWorkerProtocol.swift */; };
+		8EC9620E41656B40AD7E9C16 /* DataService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4FA9A4F97FF17C884015B /* DataService.framework */; };
+		91E44155D878E26EE8F18C69 /* AuthenticationWorker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF41FE20DD4805ED52C737F /* AuthenticationWorker.framework */; };
+		9DC4C3B862212D3D8D3A20AD /* AuthenticationWorker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCF41FE20DD4805ED52C737F /* AuthenticationWorker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E3BF28BE63B4BC103479509 /* AuthenticationWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD3502F5B8A3E97C853AB9A /* AuthenticationWorker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B39C30BFCE3D8E17C1AC4BF9 /* AuthenticationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEB4C5B43445EBB4B77FA71 /* AuthenticationWorker.swift */; };
+		F842E22FF2D42950A286F87D /* Domains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDD76B9C6308F6268C239E0 /* Domains.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF8942BF79CCFF3907146A53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14BD9035CD864D5CE5CEFDDA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 079252F4D5CA0940C8D7E7BA;
+			remoteInfo = AuthenticationWorker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4B070C6562D0B304AB46FDB2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DC4C3B862212D3D8D3A20AD /* AuthenticationWorker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3CB08A2C9AED611D329D92A3 /* AuthenticationWorkerTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = AuthenticationWorkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B4FA9A4F97FF17C884015B /* DataService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DataService.framework; path = "${BUILT_PRODUCTS_DIR}/DataService.framework"; sourceTree = "<group>"; };
+		539E6378389C9FAAED51D827 /* AuthenticationWorkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationWorkerProtocol.swift; sourceTree = "<group>"; };
+		5BDD76B9C6308F6268C239E0 /* Domains.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Domains.framework; path = "${BUILT_PRODUCTS_DIR}/Domains.framework"; sourceTree = "<group>"; };
+		77DC0638E7D8F358E281DCBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9CD3502F5B8A3E97C853AB9A /* AuthenticationWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthenticationWorker.h; sourceTree = "<group>"; };
+		AA5FA48394B37697D04A865A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BE1E354930C14DBE1E101A07 /* AuthenticationWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationWorkerTests.swift; sourceTree = "<group>"; };
+		EAEB4C5B43445EBB4B77FA71 /* AuthenticationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationWorker.swift; sourceTree = "<group>"; };
+		FCF41FE20DD4805ED52C737F /* AuthenticationWorker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthenticationWorker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DEADA5DF24F8CD3656712A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F842E22FF2D42950A286F87D /* Domains.framework in Frameworks */,
+				8EC9620E41656B40AD7E9C16 /* DataService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BF301BB3095EF32287F1CB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91E44155D878E26EE8F18C69 /* AuthenticationWorker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03C5769BE1F0FC5FE62E1346 = {
+			isa = PBXGroup;
+			children = (
+				5614C05C29939FD64F23CA64 /* AuthenticationWorker */,
+				E0AFE1401B30CB88929B204C /* AuthenticationWorkerTests */,
+				121EA2599B2210A9055EB803 /* Frameworks */,
+				D56F15FE93424C9DB74DA04D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		121EA2599B2210A9055EB803 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45B4FA9A4F97FF17C884015B /* DataService.framework */,
+				5BDD76B9C6308F6268C239E0 /* Domains.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5614C05C29939FD64F23CA64 /* AuthenticationWorker */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3502F5B8A3E97C853AB9A /* AuthenticationWorker.h */,
+				EAEB4C5B43445EBB4B77FA71 /* AuthenticationWorker.swift */,
+				539E6378389C9FAAED51D827 /* AuthenticationWorkerProtocol.swift */,
+				77DC0638E7D8F358E281DCBE /* Info.plist */,
+			);
+			path = AuthenticationWorker;
+			sourceTree = "<group>";
+		};
+		D56F15FE93424C9DB74DA04D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCF41FE20DD4805ED52C737F /* AuthenticationWorker.framework */,
+				3CB08A2C9AED611D329D92A3 /* AuthenticationWorkerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0AFE1401B30CB88929B204C /* AuthenticationWorkerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE1E354930C14DBE1E101A07 /* AuthenticationWorkerTests.swift */,
+				AA5FA48394B37697D04A865A /* Info.plist */,
+			);
+			path = AuthenticationWorkerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A2794AB756F6EAA8AE93CFAC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E3BF28BE63B4BC103479509 /* AuthenticationWorker.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		079252F4D5CA0940C8D7E7BA /* AuthenticationWorker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C082E26A2C14F926EBC7D8B3 /* Build configuration list for PBXNativeTarget "AuthenticationWorker" */;
+			buildPhases = (
+				A2794AB756F6EAA8AE93CFAC /* Headers */,
+				4CA7A5AFB155EC6F7F7A0DC4 /* Sources */,
+				2DEADA5DF24F8CD3656712A3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AuthenticationWorker;
+			productName = AuthenticationWorker;
+			productReference = FCF41FE20DD4805ED52C737F /* AuthenticationWorker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CFFB9636274FA3181B857580 /* AuthenticationWorkerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9D48709C371490BBC90A653 /* Build configuration list for PBXNativeTarget "AuthenticationWorkerTests" */;
+			buildPhases = (
+				BA97C56E6AE95BFBBC7C3A93 /* Sources */,
+				7BF301BB3095EF32287F1CB8 /* Frameworks */,
+				4B070C6562D0B304AB46FDB2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E10215DCA45BF684465BCE6 /* PBXTargetDependency */,
+			);
+			name = AuthenticationWorkerTests;
+			productName = AuthenticationWorkerTests;
+			productReference = 3CB08A2C9AED611D329D92A3 /* AuthenticationWorkerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14BD9035CD864D5CE5CEFDDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = BD7CC9CAB999491746C8015B /* Build configuration list for PBXProject "AuthenticationWorker" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 03C5769BE1F0FC5FE62E1346;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				079252F4D5CA0940C8D7E7BA /* AuthenticationWorker */,
+				CFFB9636274FA3181B857580 /* AuthenticationWorkerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CA7A5AFB155EC6F7F7A0DC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B39C30BFCE3D8E17C1AC4BF9 /* AuthenticationWorker.swift in Sources */,
+				2EF0FB9511BEB0413F74E14F /* AuthenticationWorkerProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA97C56E6AE95BFBBC7C3A93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FDDEA098FA7F2329B396271 /* AuthenticationWorkerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E10215DCA45BF684465BCE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 079252F4D5CA0940C8D7E7BA /* AuthenticationWorker */;
+			targetProxy = CF8942BF79CCFF3907146A53 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		23BF850BA004F7DD79A41FDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AuthenticationWorkerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.AuthenticationWorkerTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		89B30E2C202308842D13A59E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${BUILT_PRODUCTS_DIR}\"",
+				);
+				INFOPLIST_FILE = AuthenticationWorker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.AuthenticationWorker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		924195F696FF64246A7FA92E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AuthenticationWorkerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.AuthenticationWorkerTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A07952511A8E78FC23A3CEDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${BUILT_PRODUCTS_DIR}\"",
+				);
+				INFOPLIST_FILE = AuthenticationWorker/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.AuthenticationWorker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		A6C7E38051391A27FBF08606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FAC526FCB25FD59A4241E67C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9D48709C371490BBC90A653 /* Build configuration list for PBXNativeTarget "AuthenticationWorkerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				924195F696FF64246A7FA92E /* Debug */,
+				23BF850BA004F7DD79A41FDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BD7CC9CAB999491746C8015B /* Build configuration list for PBXProject "AuthenticationWorker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C7E38051391A27FBF08606 /* Debug */,
+				FAC526FCB25FD59A4241E67C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C082E26A2C14F926EBC7D8B3 /* Build configuration list for PBXNativeTarget "AuthenticationWorker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A07952511A8E78FC23A3CEDC /* Debug */,
+				89B30E2C202308842D13A59E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14BD9035CD864D5CE5CEFDDA /* Project object */;
+}
