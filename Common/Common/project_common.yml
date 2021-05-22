@@ -1,0 +1,19 @@
+name: Common
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  Common:
+    type: framework
+    platform: iOS
+    sources:
+      - Common
+  CommonTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Common
+    sources:
+      - CommonTests
+    

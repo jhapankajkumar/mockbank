@@ -1,0 +1,25 @@
+name: AuthenticationWorker
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  AuthenticationWorker:
+    type: framework
+    platform: iOS
+    sources:
+      - AuthenticationWorker
+    dependencies:
+     - framework: '${BUILT_PRODUCTS_DIR}/Domains.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/DataService.framework'
+       embed: false
+       codeSign: false
+  AuthenticationWorkerTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: AuthenticationWorker
+    sources:
+      - AuthenticationWorkerTests

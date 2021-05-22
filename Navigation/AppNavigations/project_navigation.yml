@@ -1,0 +1,48 @@
+name: AppNavigations
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  AppNavigations:
+    type: framework
+    platform: iOS
+    sources:
+      - AppNavigations
+    dependencies:
+     - framework: '${BUILT_PRODUCTS_DIR}/Payment.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Topup.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Dashboard.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Authentication.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Splash.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Common.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Domains.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/DataService.framework'
+       embed: false
+       codeSign: false
+       
+    scheme:
+      testTargets:
+      - AppNavigationsTests
+  AppNavigationsTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: AppNavigations
+    sources:
+      - AppNavigationsTests
+    

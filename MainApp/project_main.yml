@@ -1,0 +1,42 @@
+name: MainApp
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  MainApp:
+    type: application
+    platform: iOS
+    sources:
+      - MainApp
+    dependencies:
+     - framework: '${BUILT_PRODUCTS_DIR}/AppNavigations.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/Payment.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/Topup.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/Dashboard.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/Authentication.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/Splash.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/Common.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/Domains.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/DataService.framework'
+       embed: true
+     - framework: '${BUILT_PRODUCTS_DIR}/AuthenticationWorker.framework'
+       embed: true
+       
+      
+  MainAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: MainApp
+    sources:
+      - MainAppTests
+    

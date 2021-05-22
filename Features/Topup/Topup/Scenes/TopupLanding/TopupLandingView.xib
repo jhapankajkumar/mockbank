@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopupLandingView" customModuleProvider="target">
+            <connections>
+                <outlet property="amountTextField" destination="FbH-eg-scr" id="tfs-fz-VRS"/>
+                <outlet property="container" destination="Cez-pf-Gbf" id="vTR-LD-42x"/>
+                <outlet property="topupButton" destination="78B-H5-x69" id="dMW-ll-3lm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cez-pf-Gbf">
+                    <rect key="frame" x="16" y="141" width="382" height="200"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-eg-scr">
+                            <rect key="frame" x="53" y="35" width="277" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78B-H5-x69" customClass="MKUIButton" customModule="Common">
+                            <rect key="frame" x="61" y="129" width="269" height="45"/>
+                            <color key="backgroundColor" name="AccentColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="dVe-lW-5GT"/>
+                            </constraints>
+                            <state key="normal" title="Topup">
+                                <color key="titleColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="buttonStyle">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="buttonShape">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapTopupButton:" destination="-1" eventType="touchUpInside" id="bhq-nc-8RN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="b6V-gg-Gdt"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstItem="78B-H5-x69" firstAttribute="leading" secondItem="b6V-gg-Gdt" secondAttribute="leading" constant="61" id="3BV-cC-HA4"/>
+                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="trailing" secondItem="FbH-eg-scr" secondAttribute="trailing" constant="52" id="E4V-Om-Sh9"/>
+                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="trailing" secondItem="78B-H5-x69" secondAttribute="trailing" constant="52" id="PcW-lI-bHb"/>
+                        <constraint firstAttribute="height" constant="200" id="QVl-6b-xqx"/>
+                        <constraint firstItem="78B-H5-x69" firstAttribute="top" secondItem="FbH-eg-scr" secondAttribute="bottom" constant="60" id="fSe-LS-8nf"/>
+                        <constraint firstItem="FbH-eg-scr" firstAttribute="leading" secondItem="b6V-gg-Gdt" secondAttribute="leading" constant="53" id="iPd-AM-dOL"/>
+                        <constraint firstItem="FbH-eg-scr" firstAttribute="top" secondItem="b6V-gg-Gdt" secondAttribute="top" constant="35" id="kdQ-CU-oRJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Cez-pf-Gbf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="97" id="v5t-An-Zsy"/>
+                <constraint firstAttribute="trailing" secondItem="Cez-pf-Gbf" secondAttribute="trailing" constant="16" id="xVl-bR-VLs"/>
+                <constraint firstItem="Cez-pf-Gbf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="xtl-Yz-4s5"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="78B-H5-x69">
+            <size key="intrinsicContentSize" width="39" height="29"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,19 @@
+name: Domains
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  Domains:
+    type: framework
+    platform: iOS
+    sources:
+      - Domains
+  DomainsTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Domains
+    sources:
+      - DomainsTests
+    

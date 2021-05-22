@@ -1,0 +1,19 @@
+name: DataService
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  DataService:
+    type: framework
+    platform: iOS
+    sources:
+      - DataService
+  DataServiceTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: DataService
+    sources:
+      - DataServiceTests
+    

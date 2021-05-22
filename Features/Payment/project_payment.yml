@@ -1,0 +1,35 @@
+name: Payment
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  Payment:
+    type: framework
+    platform: iOS
+    sources:
+      - Payment
+    scheme:
+      testTargets:
+      - PaymentTests
+    dependencies:
+     - framework: '${BUILT_PRODUCTS_DIR}/Common.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Domains.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/DataService.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/AuthenticationWorker.framework'
+       embed: false
+       codeSign: false
+  PaymentTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Payment
+    sources:
+      - PaymentTests
+    

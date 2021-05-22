@@ -1,0 +1,35 @@
+name: Topup
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  Topup:
+    type: framework
+    platform: iOS
+    sources:
+      - Topup
+    scheme:
+      testTargets:
+      - TopupTests
+    dependencies:
+     - framework: '${BUILT_PRODUCTS_DIR}/Common.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Domains.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/DataService.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/AuthenticationWorker.framework'
+       embed: false
+       codeSign: false
+  TopupTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Topup
+    sources:
+      - TopupTests
+    

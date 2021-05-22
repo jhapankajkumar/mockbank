@@ -1,0 +1,22 @@
+name: Splash
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  Splash:
+    type: framework
+    platform: iOS
+    sources:
+      - Splash
+    scheme:
+      testTargets:
+      - SplashTests
+  SplashTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Splash
+    sources:
+      - SplashTests
+    

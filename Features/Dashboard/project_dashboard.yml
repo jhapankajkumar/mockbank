@@ -1,0 +1,35 @@
+name: Dashboard
+options:
+  bundleIdPrefix: com.pankaj
+  deploymentTarget:
+    iOS: 14.0
+targets:
+  Dashboard:
+    type: framework
+    platform: iOS
+    sources:
+      - Dashboard
+    scheme:
+      testTargets:
+      - DashboardTests
+    dependencies:
+     - framework: '${BUILT_PRODUCTS_DIR}/Common.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/Domains.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/DataService.framework'
+       embed: false
+       codeSign: false
+     - framework: '${BUILT_PRODUCTS_DIR}/AuthenticationWorker.framework'
+       embed: false
+       codeSign: false
+  DashboardTests:
+    type: bundle.unit-test
+    platform: iOS
+    dependencies:
+      - target: Dashboard
+    sources:
+      - DashboardTests
+    
