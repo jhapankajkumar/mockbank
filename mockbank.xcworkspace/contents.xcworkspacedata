@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:MainApp"
+      name = "MainApp">
+      <FileRef
+         location = "group:MainApp.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Navigation"
+      name = "Navigation">
+      <FileRef
+         location = "group:AppNavigations/AppNavigations.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Features"
+      name = "Features">
+      <FileRef
+         location = "group:Splash/Splash.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Authentication/Authentication.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Topup/Topup.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Payment/Payment.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Dashboard/Dashboard.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:FeatureWorker"
+      name = "FeatureWorker">
+      <FileRef
+         location = "group:AuthenticationWorker/AuthenticationWorker.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:/Users/pankaj.k.jha/Documents/Personal/projects/mockbank/Common"
+      name = "Common">
+      <FileRef
+         location = "group:Common/Common.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:DataService"
+      name = "DataService">
+      <FileRef
+         location = "group:DataService/DataService.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Domains"
+      name = "Domains">
+      <FileRef
+         location = "group:Domains/Domains.xcodeproj">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
