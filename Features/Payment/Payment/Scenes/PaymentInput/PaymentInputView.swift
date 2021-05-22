@@ -1,22 +1,22 @@
 //
-//  TopupLandingView.swift
-//  Topup
+//  PaymentInputView.swift
+//  Payment
 //
 //  Created by pankaj.k.jha on 22/5/21.
 //
 
 import UIKit
 import Common
-class TopupLandingView: UIViewController, TopupLandingPresenterToView {
-    
+
+class PaymentInputView: UIViewController, PaymentInputPresenterToView {
+    var presenter: PaymentInputViewToPresenter?
     @IBOutlet var amountTextField: UITextField!
-    @IBOutlet var topupButton: MKUIButton!
-    var presenter: TopupLandingViewToPresenter?
+    @IBOutlet var payButton: MKUIButton!
     var loadingView: MKLoadingView?
     var amount: String? = ""
     @IBOutlet var container: UIView!
     init() {
-        super.init(nibName: String(describing: TopupLandingView.self), bundle: Bundle(for: TopupLandingView.self))
+        super.init(nibName: String(describing: PaymentInputView.self), bundle: Bundle(for: PaymentInputView.self))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,10 +25,8 @@ class TopupLandingView: UIViewController, TopupLandingPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topupButton.isActive = false
+        self.title = "Input Amount"
         amountTextField.delegate = self
-        amountTextField.keyboardType = .decimalPad
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func addDoneButtonOnKeyboard()
@@ -58,9 +56,10 @@ class TopupLandingView: UIViewController, TopupLandingPresenterToView {
     func showError() {
         
     }
-    @IBAction func didTapTopupButton(_ sender: Any) {
+    
+    @IBAction func didTapPayButton(_ sender: Any) {
         if let amount = Double(amount ?? "") {
-            presenter?.topupAmount(amount: amount)
+            presenter?.payAmount(amount: amount)
         }
     }
     

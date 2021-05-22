@@ -7,6 +7,6 @@
 
 import Foundation
 public struct TopupConstant {
-    static let topupAmountMaxLimit = 19
+    static let topupAmountMaxLimit = 10
     static let topupAmountMinLimit = 2
 }

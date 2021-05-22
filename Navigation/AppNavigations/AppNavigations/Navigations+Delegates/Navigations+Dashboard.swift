@@ -18,7 +18,8 @@ extension Navigation: DashboardWireframe {
         view.navigationController?.setViewControllers([loginScreen], animated: false)
     }
     public func navigateToPayment(from view: UIViewController, currentUser: Client) {
-        
+        let payment = PaymentConfigurator.shared.createPaymentLandingModule(currentUser: currentUser)
+        view.navigationController?.pushViewController(payment, animated: true)
     }
     public func navigateToTopup(from view: UIViewController, currentUser: Client) {
         let topup = TopupConfigurator.shared.createTopupLandingModule(currentUser: currentUser)

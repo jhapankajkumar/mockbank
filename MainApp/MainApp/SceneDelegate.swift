@@ -58,7 +58,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let root = Navigation.shared.buildSplashScreen()
             let navigationController = UINavigationController(rootViewController: root)
-            navigationController.navigationBar.isHidden = true
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }

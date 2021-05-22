@@ -25,6 +25,7 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Dashboard"
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

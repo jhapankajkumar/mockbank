@@ -9,34 +9,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopupLandingView" customModule="Topup" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentInputView" customModule="Payment" customModuleProvider="target">
             <connections>
-                <outlet property="amountTextField" destination="FbH-eg-scr" id="tfs-fz-VRS"/>
-                <outlet property="container" destination="Cez-pf-Gbf" id="vTR-LD-42x"/>
-                <outlet property="topupButton" destination="78B-H5-x69" id="dMW-ll-3lm"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="amountTextField" destination="omb-ls-50k" id="L1z-u1-gJv"/>
+                <outlet property="container" destination="Ouc-Ft-Jk9" id="iFc-GK-9Hf"/>
+                <outlet property="payButton" destination="ORM-0f-Rrq" id="1Fh-2p-qez"/>
+                <outlet property="view" destination="a30-Ya-gaz" id="sLk-yh-JRF"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="a30-Ya-gaz">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cez-pf-Gbf">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ouc-Ft-Jk9">
                     <rect key="frame" x="16" y="141" width="382" height="200"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-eg-scr">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omb-ls-50k">
                             <rect key="frame" x="53" y="35" width="277" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78B-H5-x69" customClass="MKUIButton" customModule="Common">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORM-0f-Rrq" customClass="MKUIButton" customModule="Common">
                             <rect key="frame" x="61" y="129" width="269" height="45"/>
                             <color key="backgroundColor" name="AccentColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="45" id="dVe-lW-5GT"/>
+                                <constraint firstAttribute="height" constant="45" id="aGk-OU-bIP"/>
                             </constraints>
-                            <state key="normal" title="Topup">
+                            <state key="normal" title="Pay">
                                 <color key="titleColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -50,36 +50,36 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="YES"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="didTapTopupButton:" destination="-1" eventType="touchUpInside" id="bhq-nc-8RN"/>
+                                <action selector="didTapPayButton:" destination="-1" eventType="touchUpInside" id="dGt-7a-9IC"/>
                             </connections>
                         </button>
                     </subviews>
-                    <viewLayoutGuide key="safeArea" id="b6V-gg-Gdt"/>
+                    <viewLayoutGuide key="safeArea" id="KBS-dy-t2P"/>
                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
-                        <constraint firstItem="78B-H5-x69" firstAttribute="leading" secondItem="b6V-gg-Gdt" secondAttribute="leading" constant="61" id="3BV-cC-HA4"/>
-                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="trailing" secondItem="FbH-eg-scr" secondAttribute="trailing" constant="52" id="E4V-Om-Sh9"/>
-                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="trailing" secondItem="78B-H5-x69" secondAttribute="trailing" constant="52" id="PcW-lI-bHb"/>
-                        <constraint firstAttribute="height" constant="200" id="QVl-6b-xqx"/>
-                        <constraint firstItem="78B-H5-x69" firstAttribute="top" secondItem="FbH-eg-scr" secondAttribute="bottom" constant="60" id="fSe-LS-8nf"/>
-                        <constraint firstItem="FbH-eg-scr" firstAttribute="leading" secondItem="b6V-gg-Gdt" secondAttribute="leading" constant="53" id="iPd-AM-dOL"/>
-                        <constraint firstItem="FbH-eg-scr" firstAttribute="top" secondItem="b6V-gg-Gdt" secondAttribute="top" constant="35" id="kdQ-CU-oRJ"/>
+                        <constraint firstItem="omb-ls-50k" firstAttribute="top" secondItem="KBS-dy-t2P" secondAttribute="top" constant="35" id="6eV-a6-CIH"/>
+                        <constraint firstItem="ORM-0f-Rrq" firstAttribute="top" secondItem="omb-ls-50k" secondAttribute="bottom" constant="60" id="C9B-fD-oGn"/>
+                        <constraint firstAttribute="height" constant="200" id="JcQ-Yw-j0q"/>
+                        <constraint firstItem="ORM-0f-Rrq" firstAttribute="leading" secondItem="KBS-dy-t2P" secondAttribute="leading" constant="61" id="VRE-sP-9Pi"/>
+                        <constraint firstItem="KBS-dy-t2P" firstAttribute="trailing" secondItem="omb-ls-50k" secondAttribute="trailing" constant="52" id="mCf-EY-VXK"/>
+                        <constraint firstItem="KBS-dy-t2P" firstAttribute="trailing" secondItem="ORM-0f-Rrq" secondAttribute="trailing" constant="52" id="opB-SF-VCw"/>
+                        <constraint firstItem="omb-ls-50k" firstAttribute="leading" secondItem="KBS-dy-t2P" secondAttribute="leading" constant="53" id="rKn-Hv-vlh"/>
                     </constraints>
                 </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <viewLayoutGuide key="safeArea" id="rgC-7X-Bl7"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Cez-pf-Gbf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="97" id="v5t-An-Zsy"/>
-                <constraint firstAttribute="trailing" secondItem="Cez-pf-Gbf" secondAttribute="trailing" constant="16" id="xVl-bR-VLs"/>
-                <constraint firstItem="Cez-pf-Gbf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="xtl-Yz-4s5"/>
+                <constraint firstItem="Ouc-Ft-Jk9" firstAttribute="top" secondItem="rgC-7X-Bl7" secondAttribute="top" constant="97" id="Lye-kA-s4a"/>
+                <constraint firstAttribute="trailing" secondItem="Ouc-Ft-Jk9" secondAttribute="trailing" constant="16" id="UOR-GQ-3h9"/>
+                <constraint firstItem="Ouc-Ft-Jk9" firstAttribute="leading" secondItem="rgC-7X-Bl7" secondAttribute="leading" constant="16" id="wov-81-MY9"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>
     </objects>
     <designables>
-        <designable name="78B-H5-x69">
-            <size key="intrinsicContentSize" width="51" height="34"/>
+        <designable name="ORM-0f-Rrq">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
     </designables>
     <resources>

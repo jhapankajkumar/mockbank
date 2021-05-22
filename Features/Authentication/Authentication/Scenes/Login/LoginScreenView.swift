@@ -29,6 +29,7 @@ class LoginScreenView: UIViewController, LoginScreenPresenterToView {
         container.backgroundColor = MKColor.lightGray.get()
         container.layer.cornerRadius = 8.0
         view.backgroundColor = MKColor.babyBlue.get()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func didTapLoginButton(_ sender: Any) {

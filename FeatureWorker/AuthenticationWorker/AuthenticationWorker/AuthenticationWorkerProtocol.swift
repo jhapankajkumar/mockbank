@@ -29,14 +29,21 @@ public protocol FetchUserListProtocol: AnyObject {
     func didFailToFetchUserList()
 }
 
+public protocol PaymentProtocol: AnyObject {
+    func didSuccessPayment()
+    func didFailPayment()
+}
+
 public protocol AuthenticationWorkerProtocol: AnyObject {
     var loginDelegate: UserLoginProtocol? {get set}
     var userDataDelegate: UserDataProtocol? {get set}
     var topupDelegate: TopupAmountProtocol? {get set}
     var userListDelegate: FetchUserListProtocol? {get set}
+    var paymentDelegate: PaymentProtocol? {get set}
     
     func doLogin(with user: Client)
     func getUserData(from userName: String)
     func topupAmount(amount: Double, for user: String)
     func fetchUserList()
+    func payAmount(amount: Double, fromUser: Client, toUser: Client)
 }
