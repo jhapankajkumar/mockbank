@@ -28,6 +28,6 @@ extension LoginScreenPresenter: LoginScreenInteractorToPresenter {
     }
     
     func didFailLogin() {
-        
+        view?.showError()
     }
 }

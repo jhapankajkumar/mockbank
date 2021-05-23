@@ -55,7 +55,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func launchInitialScreen() {
         if let window = UIApplication.shared.windows.first {
-            
             let root = Navigation.shared.buildSplashScreen()
             let navigationController = UINavigationController(rootViewController: root)
             window.rootViewController = navigationController

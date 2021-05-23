@@ -27,6 +27,8 @@ public enum MKColor: String {
     case billOverlay = "#1B1B1B"
     case primaryBlue = "#007ACF"
     case babyBlue = "#B3D8FF"
+    case navigationBarColor = "#1E80F0"
+    case screenBackgroundColor = "#F9F9F9"
     public func get() -> UIColor {
         return UIColor.fromHex(hex: self.rawValue)
     }

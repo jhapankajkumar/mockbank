@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 class SplashViewView: UIViewController, SplashViewPresenterToView {
     var presenter: SplashViewViewToPresenter?
@@ -19,6 +20,7 @@ class SplashViewView: UIViewController, SplashViewPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = MKColor.screenBackgroundColor.get()
         //Perform initial operation
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.0) {[weak self] in
             self?.presenter?.navigateToLogin()

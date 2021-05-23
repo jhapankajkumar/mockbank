@@ -13,6 +13,7 @@ class LoginScreenView: UIViewController, LoginScreenPresenterToView {
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var loginButton: MKUIButton!
+    @IBOutlet weak var textFieldContainer: UIView!
     var userName:String?
     init() {
         super.init(nibName: String(describing: LoginScreenView.self), bundle: Bundle(for: LoginScreenView.self))
@@ -26,10 +27,30 @@ class LoginScreenView: UIViewController, LoginScreenPresenterToView {
         loginButton.isActive = false
         userNameTextField.delegate = self
         super.viewDidLoad()
-        container.backgroundColor = MKColor.lightGray.get()
+        
+        self.view.backgroundColor = MKColor.screenBackgroundColor.get()
+        
+        decorateBox()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+        self.title = "Login"
+    }
+    func decorateBox() {
+        container.backgroundColor = MKColor.white.get()
         container.layer.cornerRadius = 8.0
-        view.backgroundColor = MKColor.babyBlue.get()
-        self.navigationController?.isNavigationBarHidden = true
+        container.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+        container.layer.shadowOpacity = 1
+        container.layer.shadowOffset = .zero
+        container.layer.shadowRadius = 2
+        
+        textFieldContainer.backgroundColor = MKColor.white.get()
+        textFieldContainer.layer.cornerRadius = 8.0
+        textFieldContainer.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+        textFieldContainer.layer.shadowOpacity = 1
+        textFieldContainer.layer.shadowOffset = .zero
+        textFieldContainer.layer.shadowRadius = 2
     }
     
     @IBAction func didTapLoginButton(_ sender: Any) {
@@ -58,6 +79,13 @@ class LoginScreenView: UIViewController, LoginScreenPresenterToView {
     func doneButtonTapped() {
         userName = userNameTextField.text
         userNameTextField.resignFirstResponder()
+    }
+    
+    func showError()  {
+        let alert = UIAlertController(title: "Alert", message: "Login failed please try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

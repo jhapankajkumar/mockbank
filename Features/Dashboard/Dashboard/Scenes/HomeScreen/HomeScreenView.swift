@@ -28,11 +28,16 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Dashboard"
+        self.title = "Home"
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.viewWillAppear()
+        addLogoutButton()
+    }
+    
+    func addLogoutButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(didTapLogout(_:)))
     }
     func updateView(viewModel: HomeScreenViewModel?) {
         self.balance.text = "\(viewModel?.balance ?? 0.0)"

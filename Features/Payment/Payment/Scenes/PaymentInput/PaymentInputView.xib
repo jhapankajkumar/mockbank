@@ -14,6 +14,7 @@
                 <outlet property="amountTextField" destination="omb-ls-50k" id="L1z-u1-gJv"/>
                 <outlet property="container" destination="Ouc-Ft-Jk9" id="iFc-GK-9Hf"/>
                 <outlet property="payButton" destination="ORM-0f-Rrq" id="1Fh-2p-qez"/>
+                <outlet property="textFieldContainer" destination="0zg-SA-PLa" id="i3E-Qd-s5D"/>
                 <outlet property="view" destination="a30-Ya-gaz" id="sLk-yh-JRF"/>
             </connections>
         </placeholder>
@@ -23,18 +24,31 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ouc-Ft-Jk9">
-                    <rect key="frame" x="16" y="141" width="382" height="200"/>
+                    <rect key="frame" x="8" y="94" width="398" height="200"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omb-ls-50k">
-                            <rect key="frame" x="53" y="35" width="277" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zg-SA-PLa">
+                            <rect key="frame" x="16" y="24" width="366" height="50"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter amount" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="omb-ls-50k">
+                                    <rect key="frame" x="10" y="5" width="346" height="40"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="omb-ls-50k" firstAttribute="leading" secondItem="0zg-SA-PLa" secondAttribute="leading" constant="10" id="5v5-pM-CLy"/>
+                                <constraint firstAttribute="trailing" secondItem="omb-ls-50k" secondAttribute="trailing" constant="10" id="67D-yY-cJC"/>
+                                <constraint firstItem="omb-ls-50k" firstAttribute="top" secondItem="0zg-SA-PLa" secondAttribute="top" constant="5" id="Nxo-hA-dxu"/>
+                                <constraint firstAttribute="bottom" secondItem="omb-ls-50k" secondAttribute="bottom" constant="5" id="XMB-xN-IH4"/>
+                                <constraint firstAttribute="height" constant="50" id="hbz-9A-Lev"/>
+                            </constraints>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORM-0f-Rrq" customClass="MKUIButton" customModule="Common">
-                            <rect key="frame" x="61" y="129" width="269" height="45"/>
+                            <rect key="frame" x="60" y="145" width="278" height="45"/>
                             <color key="backgroundColor" name="AccentColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="45" id="aGk-OU-bIP"/>
+                                <constraint firstAttribute="height" constant="45" id="ShL-bQ-XER"/>
                             </constraints>
                             <state key="normal" title="Pay">
                                 <color key="titleColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,35 +71,38 @@
                     <viewLayoutGuide key="safeArea" id="KBS-dy-t2P"/>
                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
-                        <constraint firstItem="omb-ls-50k" firstAttribute="top" secondItem="KBS-dy-t2P" secondAttribute="top" constant="35" id="6eV-a6-CIH"/>
-                        <constraint firstItem="ORM-0f-Rrq" firstAttribute="top" secondItem="omb-ls-50k" secondAttribute="bottom" constant="60" id="C9B-fD-oGn"/>
+                        <constraint firstItem="0zg-SA-PLa" firstAttribute="leading" secondItem="KBS-dy-t2P" secondAttribute="leading" constant="16" id="C27-LY-o06"/>
+                        <constraint firstItem="ORM-0f-Rrq" firstAttribute="leading" secondItem="KBS-dy-t2P" secondAttribute="leading" constant="60" id="DCZ-a4-RWP"/>
                         <constraint firstAttribute="height" constant="200" id="JcQ-Yw-j0q"/>
-                        <constraint firstItem="ORM-0f-Rrq" firstAttribute="leading" secondItem="KBS-dy-t2P" secondAttribute="leading" constant="61" id="VRE-sP-9Pi"/>
-                        <constraint firstItem="KBS-dy-t2P" firstAttribute="trailing" secondItem="omb-ls-50k" secondAttribute="trailing" constant="52" id="mCf-EY-VXK"/>
-                        <constraint firstItem="KBS-dy-t2P" firstAttribute="trailing" secondItem="ORM-0f-Rrq" secondAttribute="trailing" constant="52" id="opB-SF-VCw"/>
-                        <constraint firstItem="omb-ls-50k" firstAttribute="leading" secondItem="KBS-dy-t2P" secondAttribute="leading" constant="53" id="rKn-Hv-vlh"/>
+                        <constraint firstItem="KBS-dy-t2P" firstAttribute="bottom" secondItem="ORM-0f-Rrq" secondAttribute="bottom" constant="10" id="b9M-Rz-Xfe"/>
+                        <constraint firstItem="KBS-dy-t2P" firstAttribute="trailing" secondItem="0zg-SA-PLa" secondAttribute="trailing" constant="16" id="pf8-kR-lkq"/>
+                        <constraint firstItem="0zg-SA-PLa" firstAttribute="top" secondItem="KBS-dy-t2P" secondAttribute="top" constant="24" id="phV-a6-VEz"/>
+                        <constraint firstItem="KBS-dy-t2P" firstAttribute="trailing" secondItem="ORM-0f-Rrq" secondAttribute="trailing" constant="60" id="sS3-Dr-Ht4"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="rgC-7X-Bl7"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Ouc-Ft-Jk9" firstAttribute="top" secondItem="rgC-7X-Bl7" secondAttribute="top" constant="97" id="Lye-kA-s4a"/>
-                <constraint firstAttribute="trailing" secondItem="Ouc-Ft-Jk9" secondAttribute="trailing" constant="16" id="UOR-GQ-3h9"/>
-                <constraint firstItem="Ouc-Ft-Jk9" firstAttribute="leading" secondItem="rgC-7X-Bl7" secondAttribute="leading" constant="16" id="wov-81-MY9"/>
+                <constraint firstItem="Ouc-Ft-Jk9" firstAttribute="top" secondItem="rgC-7X-Bl7" secondAttribute="top" constant="50" id="Lye-kA-s4a"/>
+                <constraint firstAttribute="trailing" secondItem="Ouc-Ft-Jk9" secondAttribute="trailing" constant="8" id="UOR-GQ-3h9"/>
+                <constraint firstItem="Ouc-Ft-Jk9" firstAttribute="leading" secondItem="rgC-7X-Bl7" secondAttribute="leading" constant="8" id="wov-81-MY9"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>
     </objects>
     <designables>
         <designable name="ORM-0f-Rrq">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="30" height="29"/>
         </designable>
     </designables>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

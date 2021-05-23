@@ -14,6 +14,7 @@ class PaymentInputView: UIViewController, PaymentInputPresenterToView {
     @IBOutlet var payButton: MKUIButton!
     var loadingView: MKLoadingView?
     var amount: String? = ""
+    @IBOutlet weak var textFieldContainer: UIView!
     @IBOutlet var container: UIView!
     init() {
         super.init(nibName: String(describing: PaymentInputView.self), bundle: Bundle(for: PaymentInputView.self))
@@ -25,8 +26,30 @@ class PaymentInputView: UIViewController, PaymentInputPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Input Amount"
+        
         amountTextField.delegate = self
+        amountTextField.keyboardType = .decimalPad
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Input Amount"
+        decorateBox()
+    }
+    func decorateBox() {
+        container.backgroundColor = MKColor.white.get()
+        container.layer.cornerRadius = 8.0
+        container.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+        container.layer.shadowOpacity = 1
+        container.layer.shadowOffset = .zero
+        container.layer.shadowRadius = 2
+        
+        textFieldContainer.backgroundColor = MKColor.white.get()
+        textFieldContainer.layer.cornerRadius = 8.0
+        textFieldContainer.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+        textFieldContainer.layer.shadowOpacity = 1
+        textFieldContainer.layer.shadowOffset = .zero
+        textFieldContainer.layer.shadowRadius = 2
     }
     
     func addDoneButtonOnKeyboard()

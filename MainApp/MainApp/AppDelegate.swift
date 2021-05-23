@@ -7,6 +7,7 @@
 
 import UIKit
 import AppNavigations
+import Common
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         launchInitialScreen()
+        UINavigationBar.appearance().backgroundColor = MKColor.navigationBarColor.get()
         return true
     }
 
@@ -33,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func launchInitialScreen() {
         if let window = UIApplication.shared.windows.first {
-//            let navigation = Navigation(window)
             let root = Navigation.shared.buildSplashScreen()
             let navigationController = UINavigationController(rootViewController: root)
             window.rootViewController = navigationController

@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="amountTextField" destination="FbH-eg-scr" id="tfs-fz-VRS"/>
                 <outlet property="container" destination="Cez-pf-Gbf" id="vTR-LD-42x"/>
+                <outlet property="textFieldContainer" destination="15E-Te-SGo" id="GBg-p1-yXk"/>
                 <outlet property="topupButton" destination="78B-H5-x69" id="dMW-ll-3lm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,15 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cez-pf-Gbf">
-                    <rect key="frame" x="16" y="141" width="382" height="200"/>
+                    <rect key="frame" x="8" y="94" width="398" height="200"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-eg-scr">
-                            <rect key="frame" x="53" y="35" width="277" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78B-H5-x69" customClass="MKUIButton" customModule="Common">
-                            <rect key="frame" x="61" y="129" width="269" height="45"/>
+                            <rect key="frame" x="60" y="145" width="278" height="45"/>
                             <color key="backgroundColor" name="AccentColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="dVe-lW-5GT"/>
@@ -53,39 +49,60 @@
                                 <action selector="didTapTopupButton:" destination="-1" eventType="touchUpInside" id="bhq-nc-8RN"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15E-Te-SGo">
+                            <rect key="frame" x="16" y="24" width="366" height="50"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter amount" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FbH-eg-scr">
+                                    <rect key="frame" x="10" y="5" width="346" height="40"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="FbH-eg-scr" firstAttribute="top" secondItem="15E-Te-SGo" secondAttribute="top" constant="5" id="DFo-qP-8yJ"/>
+                                <constraint firstAttribute="height" constant="50" id="LgC-Pc-s9W"/>
+                                <constraint firstAttribute="bottom" secondItem="FbH-eg-scr" secondAttribute="bottom" constant="5" id="Nhk-TQ-vgJ"/>
+                                <constraint firstItem="FbH-eg-scr" firstAttribute="leading" secondItem="15E-Te-SGo" secondAttribute="leading" constant="10" id="WD5-zL-SmM"/>
+                                <constraint firstAttribute="trailing" secondItem="FbH-eg-scr" secondAttribute="trailing" constant="10" id="vPV-Ej-JuV"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="b6V-gg-Gdt"/>
                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
-                        <constraint firstItem="78B-H5-x69" firstAttribute="leading" secondItem="b6V-gg-Gdt" secondAttribute="leading" constant="61" id="3BV-cC-HA4"/>
-                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="trailing" secondItem="FbH-eg-scr" secondAttribute="trailing" constant="52" id="E4V-Om-Sh9"/>
-                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="trailing" secondItem="78B-H5-x69" secondAttribute="trailing" constant="52" id="PcW-lI-bHb"/>
+                        <constraint firstItem="78B-H5-x69" firstAttribute="leading" secondItem="b6V-gg-Gdt" secondAttribute="leading" constant="60" id="3BV-cC-HA4"/>
+                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="bottom" secondItem="78B-H5-x69" secondAttribute="bottom" constant="10" id="AnL-rp-si1"/>
+                        <constraint firstItem="15E-Te-SGo" firstAttribute="top" secondItem="b6V-gg-Gdt" secondAttribute="top" constant="24" id="I3T-aY-BLt"/>
+                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="trailing" secondItem="78B-H5-x69" secondAttribute="trailing" constant="60" id="PcW-lI-bHb"/>
                         <constraint firstAttribute="height" constant="200" id="QVl-6b-xqx"/>
-                        <constraint firstItem="78B-H5-x69" firstAttribute="top" secondItem="FbH-eg-scr" secondAttribute="bottom" constant="60" id="fSe-LS-8nf"/>
-                        <constraint firstItem="FbH-eg-scr" firstAttribute="leading" secondItem="b6V-gg-Gdt" secondAttribute="leading" constant="53" id="iPd-AM-dOL"/>
-                        <constraint firstItem="FbH-eg-scr" firstAttribute="top" secondItem="b6V-gg-Gdt" secondAttribute="top" constant="35" id="kdQ-CU-oRJ"/>
+                        <constraint firstItem="b6V-gg-Gdt" firstAttribute="trailing" secondItem="15E-Te-SGo" secondAttribute="trailing" constant="16" id="YYY-Dc-jzW"/>
+                        <constraint firstItem="15E-Te-SGo" firstAttribute="leading" secondItem="b6V-gg-Gdt" secondAttribute="leading" constant="16" id="fBN-pE-Pyj"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Cez-pf-Gbf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="97" id="v5t-An-Zsy"/>
-                <constraint firstAttribute="trailing" secondItem="Cez-pf-Gbf" secondAttribute="trailing" constant="16" id="xVl-bR-VLs"/>
-                <constraint firstItem="Cez-pf-Gbf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="xtl-Yz-4s5"/>
+                <constraint firstItem="Cez-pf-Gbf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="v5t-An-Zsy"/>
+                <constraint firstAttribute="trailing" secondItem="Cez-pf-Gbf" secondAttribute="trailing" constant="8" id="xVl-bR-VLs"/>
+                <constraint firstItem="Cez-pf-Gbf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="xtl-Yz-4s5"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>
     </objects>
     <designables>
         <designable name="78B-H5-x69">
-            <size key="intrinsicContentSize" width="51" height="34"/>
+            <size key="intrinsicContentSize" width="39" height="29"/>
         </designable>
     </designables>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

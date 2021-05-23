@@ -11,6 +11,7 @@ import Domains
 // MARK: View -
 protocol LoginScreenPresenterToView: AnyObject {
     var presenter: LoginScreenViewToPresenter? { get set }
+    func showError()
 }
 
 // MARK: Interactor -

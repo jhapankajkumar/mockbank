@@ -14,6 +14,7 @@ class TopupLandingView: UIViewController, TopupLandingPresenterToView {
     var presenter: TopupLandingViewToPresenter?
     var loadingView: MKLoadingView?
     var amount: String? = ""
+    @IBOutlet weak var textFieldContainer: UIView!
     @IBOutlet var container: UIView!
     init() {
         super.init(nibName: String(describing: TopupLandingView.self), bundle: Bundle(for: TopupLandingView.self))
@@ -28,7 +29,27 @@ class TopupLandingView: UIViewController, TopupLandingPresenterToView {
         topupButton.isActive = false
         amountTextField.delegate = self
         amountTextField.keyboardType = .decimalPad
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Topup"
+        decorateBox()
+    }
+    func decorateBox() {
+        container.backgroundColor = MKColor.white.get()
+        container.layer.cornerRadius = 8.0
+        container.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+        container.layer.shadowOpacity = 1
+        container.layer.shadowOffset = .zero
+        container.layer.shadowRadius = 2
+        
+        textFieldContainer.backgroundColor = MKColor.white.get()
+        textFieldContainer.layer.cornerRadius = 8.0
+        textFieldContainer.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+        textFieldContainer.layer.shadowOpacity = 1
+        textFieldContainer.layer.shadowOffset = .zero
+        textFieldContainer.layer.shadowRadius = 2
     }
     
     func addDoneButtonOnKeyboard()
@@ -56,7 +77,10 @@ class TopupLandingView: UIViewController, TopupLandingPresenterToView {
     }
     
     func showError() {
-        
+        let alert = UIAlertController(title: "Alert", message: "Topup failed please try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     @IBAction func didTapTopupButton(_ sender: Any) {
         amountTextField.resignFirstResponder()
