@@ -89,10 +89,10 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                         let dueAmount = result.value(forKeyPath: DBC.amountKey) as? Double
                         debtClient.dueAmount = dueAmount
                         if abs(dueAmount ?? 0) > 0 {
-                            if userName == payer {
+                            if userName.lowercased() == payer {
                                 debtClient.status = .payer
                                 debtClient.payerPayee = payee?.capitalized
-                            } else if userName == payee {
+                            } else if userName.lowercased() == payee {
                                 debtClient.status = .payee
                                 debtClient.payerPayee = payer?.capitalized
                             } else {

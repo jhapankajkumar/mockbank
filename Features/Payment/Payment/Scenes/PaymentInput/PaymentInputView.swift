@@ -26,7 +26,7 @@ class PaymentInputView: UIViewController, PaymentInputPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        payButton.isActive = false
         amountTextField.delegate = self
         amountTextField.keyboardType = .decimalPad
     }
