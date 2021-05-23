@@ -31,6 +31,7 @@ extension LoginScreenView : UITextFieldDelegate {
             } else {
                 loginButton.isActive = false
             }
+            userName = newString as String
             if newString.length == 0 {
                 return true
             } else {

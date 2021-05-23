@@ -59,6 +59,7 @@ class TopupLandingView: UIViewController, TopupLandingPresenterToView {
         
     }
     @IBAction func didTapTopupButton(_ sender: Any) {
+        amountTextField.resignFirstResponder()
         if let amount = Double(amount ?? "") {
             presenter?.topupAmount(amount: amount)
         }

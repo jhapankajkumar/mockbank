@@ -33,6 +33,7 @@ class LoginScreenView: UIViewController, LoginScreenPresenterToView {
     }
     
     @IBAction func didTapLoginButton(_ sender: Any) {
+        userNameTextField.resignFirstResponder()
         if let userName = self.userName {
             print("> Login \(userName.capitalized)\n")
             presenter?.login(with: userName)

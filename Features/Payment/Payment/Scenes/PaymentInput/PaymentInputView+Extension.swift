@@ -30,6 +30,7 @@ extension PaymentInputView: UITextFieldDelegate {
             } else {
                 payButton.isActive = false
             }
+            amount = newString as String
             if newString.length == 0 {
                 return true
             } else {

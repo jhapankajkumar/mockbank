@@ -6,11 +6,11 @@
 //
 
 import UIKit
-
+import Common
 class PaymentLandingView: UIViewController, PaymentLandingPresenterToView {
 
     var presenter: PaymentLandingViewToPresenter?
-    
+    var loadingView: MKLoadingView?
     @IBOutlet var noUserFound: UILabel!
     @IBOutlet var userTable: UITableView!
     init() {
@@ -36,11 +36,12 @@ class PaymentLandingView: UIViewController, PaymentLandingPresenterToView {
         self.navigationController?.isNavigationBarHidden = false
     }
     func showLoading() {
-        
+        if loadingView?.superview == nil {
+            loadingView = MKLoadingView(attachTo: self.view)
+        }
     }
-    
     func hideLoading() {
-        
+        loadingView?.dismiss()
     }
     
     func reloadTable() {

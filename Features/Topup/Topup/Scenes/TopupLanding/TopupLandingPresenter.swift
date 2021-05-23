@@ -30,5 +30,6 @@ extension TopupLandingPresenter: TopupLandingInteractorToPresenter {
     }
     func didFailtTopup() {
         view?.hideLoading()
+        view?.showError()
     }
 }

@@ -54,10 +54,14 @@ class PaymentInputView: UIViewController, PaymentInputPresenterToView {
     }
     
     func showError() {
-        
+        let alert = UIAlertController(title: "Alert", message: "Payment failed please try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func didTapPayButton(_ sender: Any) {
+        amountTextField.resignFirstResponder()
         if let amount = Double(amount ?? "") {
             presenter?.payAmount(amount: amount)
         }
