@@ -14,6 +14,9 @@ protocol HomeScreenPresenterToView: AnyObject {
     func showLoading()
     func hideLoading()
     func showLowBalanceAlert()
+    func initialSetup()
+    func setupView()
+    func showError()
 }
 
 // MARK: Interactor -
@@ -34,6 +37,7 @@ protocol HomeScreenViewToPresenter: AnyObject {
     var view: HomeScreenPresenterToView? { get set }
     var interactor: HomeScreenPresenterToInteractor? { get set }
     var router: HomeScreenPresenterToRouter? { get set }
+    func didLoad()
     func viewWillAppear()
     func topupButtonTapped()
     func paymentButtonTapped()

@@ -16,8 +16,11 @@ class HomeScreenPresenter: HomeScreenViewToPresenter {
     init(userName: String) {
         self.userName = userName
     }
-    
+    func didLoad() {
+        view?.initialSetup()
+    }
     func viewWillAppear() {
+        view?.setupView()
         view?.showLoading()
         interactor?.getUserData(userName: self.userName)
     }
@@ -49,5 +52,6 @@ extension HomeScreenPresenter: HomeScreenInteractorToPresenter {
     
     func didFailTogetUserData() {
         view?.hideLoading()
+        view?.showError()
     }
 }

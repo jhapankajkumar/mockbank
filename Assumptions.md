@@ -16,6 +16,11 @@ Each module can have their own `Feature Worker`. it depends on the requirement. 
 ### Database 
 I am using Core Data framework to for storing and retreaving data, to manage this, I have created the `Data Service` framework which have the DB
 
+### Unit Testing
+I am using Quick, Nimble framework for unit testing. 
+[Detail](_https://medium.com/mobil-dev/quick-and-nimble-5c90aa6b3d48_). 
+
+
 ### Validations
 1. User name must be between `3 - 16` characters.
 2. Max digit for Topup and Payment is `10`.

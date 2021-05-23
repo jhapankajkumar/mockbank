@@ -32,16 +32,21 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.didLoad()
+    }
+    func initialSetup() {
         self.title = "Home"
         debtTable.dataSource = self
         debtTable.backgroundColor = .clear
         debtTable.register(UINib(nibName: String(describing: DebtTableViewCell.self),
                                     bundle: Bundle(for: DebtTableViewCell.self)),
                                     forCellReuseIdentifier: DebtTableViewCell.reuseIdentifier)
-    
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+    }
+    func setupView() {
         if let amount = appContext?.transferedAmount , let transferTo = appContext?.transferedTo {
             print("Transfered \(amount) to \(transferTo)")
             self.transferLabel.isHidden = false
@@ -52,7 +57,6 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
         } else {
             self.transferLabel.isHidden = true
         }
-        presenter?.viewWillAppear()
         addLogoutButton()
         decorateBox()
     }
@@ -79,6 +83,12 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
     }
     func showLowBalanceAlert() {
         let alert = UIAlertController(title: "Alert", message: "You have insufficient balance, please topup first and try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func showError() {
+        let alert = UIAlertController(title: "Alert", message: "Could not fetch user data, please login again", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
         }))
         self.present(alert, animated: true, completion: nil)

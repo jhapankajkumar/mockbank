@@ -38,6 +38,11 @@ XcodeGen will refresh indexing identifier for each files inside pbxproj, so you 
 4. Select scheme `MainApp` 
 5. Run
 
+### How to Run Test Cases
+1. Select scheme `MainApp`
+2. Select `Command` + `U` 
+
+
 ### How to Create Framework
 1. `File -> New -> Project` choose a template *iOS* and go to *framework and library*. Select *Framework*
 2. Fill the framework name, empty Organization name and write some identifier we will setting identifier later in the *xcconfig* files.
