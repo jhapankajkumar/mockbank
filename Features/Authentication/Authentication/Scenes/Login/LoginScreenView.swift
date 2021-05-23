@@ -38,19 +38,8 @@ class LoginScreenView: UIViewController, LoginScreenPresenterToView {
         self.title = "Login"
     }
     func decorateBox() {
-        container.backgroundColor = MKColor.white.get()
-        container.layer.cornerRadius = 8.0
-        container.layer.shadowColor = MKColor.greyOverlay.get().cgColor
-        container.layer.shadowOpacity = 1
-        container.layer.shadowOffset = .zero
-        container.layer.shadowRadius = 2
-        
-        textFieldContainer.backgroundColor = MKColor.white.get()
-        textFieldContainer.layer.cornerRadius = 8.0
-        textFieldContainer.layer.shadowColor = MKColor.greyOverlay.get().cgColor
-        textFieldContainer.layer.shadowOpacity = 1
-        textFieldContainer.layer.shadowOffset = .zero
-        textFieldContainer.layer.shadowRadius = 2
+        container.decorateView()
+        textFieldContainer.decorateView()
     }
     
     @IBAction func didTapLoginButton(_ sender: Any) {

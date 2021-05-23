@@ -57,19 +57,7 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
         decorateBox()
     }
     func decorateBox() {
-//        container.backgroundColor = MKColor.white.get()
-//        container.layer.cornerRadius = 8.0
-//        container.layer.shadowColor = MKColor.greyOverlay.get().cgColor
-//        container.layer.shadowOpacity = 1
-//        container.layer.shadowOffset = .zero
-//        container.layer.shadowRadius = 2
-        
-        buttonContainer.backgroundColor = MKColor.white.get()
-        buttonContainer.layer.cornerRadius = 8.0
-        buttonContainer.layer.shadowColor = MKColor.greyOverlay.get().cgColor
-        buttonContainer.layer.shadowOpacity = 1
-        buttonContainer.layer.shadowOffset = .zero
-        buttonContainer.layer.shadowRadius = 2
+        buttonContainer.decorateView()
     }
     func addLogoutButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(didTapLogout(_:)))

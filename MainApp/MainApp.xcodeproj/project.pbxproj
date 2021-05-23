@@ -312,7 +312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.MainApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.mockbank;
 				PRODUCT_NAME = MockBank;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -462,7 +462,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.MainApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.mockbank;
 				PRODUCT_NAME = MockBank;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
