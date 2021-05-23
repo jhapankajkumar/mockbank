@@ -70,7 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		060B3A98FC53E8A02C398239 /* MainApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		060B3A98FC53E8A02C398239 /* MockBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B86BD4D9AE271E3CF3D09C1 /* DataService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DataService.framework; path = "${BUILT_PRODUCTS_DIR}/DataService.framework"; sourceTree = "<group>"; };
 		13F6BA7BAE2A8E01F1E15DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A84D65F39EEE917AD19F7B9 /* MainAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppTests.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		73B13978C93862E5AD69BCC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				060B3A98FC53E8A02C398239 /* MainApp.app */,
+				060B3A98FC53E8A02C398239 /* MockBank.app */,
 				6FA35847794CCD7CB593991F /* MainAppTests.xctest */,
 			);
 			name = Products;
@@ -191,7 +191,7 @@
 			);
 			name = MainApp;
 			productName = MainApp;
-			productReference = 060B3A98FC53E8A02C398239 /* MainApp.app */;
+			productReference = 060B3A98FC53E8A02C398239 /* MockBank.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F9EFA312C7A115D0A1871236 /* MainAppTests */ = {
@@ -217,14 +217,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = C94346B8B75719D8319921C2 /* Build configuration list for PBXProject "MainApp" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 			);
 			mainGroup = 0767F0D2E9F7C0B23673A1B1;
@@ -314,6 +313,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.MainApp;
+				PRODUCT_NAME = MockBank;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,6 +463,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.MainApp;
+				PRODUCT_NAME = MockBank;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

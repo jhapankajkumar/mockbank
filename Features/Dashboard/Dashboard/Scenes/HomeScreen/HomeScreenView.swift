@@ -15,8 +15,7 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
     @IBOutlet weak var topupButton: MKUIButton!
     @IBOutlet weak var paymentButton: MKUIButton!
     @IBOutlet weak var userStatus: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var debtStackView: UIStackView!
+    @IBOutlet weak var buttonContainer: UIView!
     var loadingView: MKLoadingView?
     init() {
         super.init(nibName: String(describing: HomeScreenView.self), bundle: Bundle(for: HomeScreenView.self))
@@ -34,8 +33,23 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
         super.viewWillAppear(animated)
         presenter?.viewWillAppear()
         addLogoutButton()
+        decorateBox()
     }
-    
+    func decorateBox() {
+        container.backgroundColor = MKColor.white.get()
+        container.layer.cornerRadius = 8.0
+        container.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+        container.layer.shadowOpacity = 1
+        container.layer.shadowOffset = .zero
+        container.layer.shadowRadius = 2
+        
+        buttonContainer.backgroundColor = MKColor.white.get()
+        buttonContainer.layer.cornerRadius = 8.0
+        buttonContainer.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+        buttonContainer.layer.shadowOpacity = 1
+        buttonContainer.layer.shadowOffset = .zero
+        buttonContainer.layer.shadowRadius = 2
+    }
     func addLogoutButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(didTapLogout(_:)))
     }

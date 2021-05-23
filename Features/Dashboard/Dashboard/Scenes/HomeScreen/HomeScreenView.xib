@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeScreenView" customModule="Dashboard" customModuleProvider="target">
             <connections>
                 <outlet property="balance" destination="FYk-fh-YEa" id="QA2-Az-YkZ"/>
+                <outlet property="buttonContainer" destination="h67-jy-EDF" id="qRH-o1-A0C"/>
                 <outlet property="container" destination="8MJ-eP-vXV" id="zKA-42-Zws"/>
                 <outlet property="paymentButton" destination="brk-ds-kqp" id="1iL-OY-d4c"/>
                 <outlet property="topupButton" destination="cU3-y8-hXx" id="fqT-EG-pkR"/>

@@ -16,9 +16,25 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mock Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPA-AA-od7">
+                    <rect key="frame" x="105" y="417.5" width="204" height="61"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="204" id="8jP-My-alP"/>
+                        <constraint firstAttribute="height" constant="61" id="Gsy-F0-koB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="59" y="132"/>
+            <constraints>
+                <constraint firstItem="SPA-AA-od7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4Qa-En-Cuw"/>
+                <constraint firstItem="SPA-AA-od7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SZw-d2-7Be"/>
+            </constraints>
+            <point key="canvasLocation" x="57.971014492753625" y="131.91964285714286"/>
         </view>
     </objects>
 </document>
