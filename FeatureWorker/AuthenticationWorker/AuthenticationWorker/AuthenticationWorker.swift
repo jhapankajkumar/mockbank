@@ -127,6 +127,8 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
             NSFetchRequest<NSManagedObject>(entityName: DBConstants.debtTable)
         var predicate = NSPredicate(format: "\(DBC.payerKey) == %@", user.lowercased())
         debtFetchRequest.predicate = predicate
+        var amountPaidToPayee: Double?
+        var payeeName: String?
         do {
             let fetchedResults = try managedContext.fetch(debtFetchRequest)
             if fetchedResults.first != nil {
@@ -140,13 +142,15 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                         //update payee balance
                         if let payee = result?.value(forKeyPath: DBC.payeeKey) as? String {
                             updateBalace(amount: amount, for: payee)
+                            topupDelegate?.didSuccessTopup(amount: amount, transferedToUser: payee)
                         }
-                        topupDelegate?.didSuccessTopup()
                         return
                     } else {
                         amount = amount - (debt ?? 0)
                         result?.setValue(0, forKeyPath: DBC.amountKey)
+                        amountPaidToPayee = debt
                         if let payee = result?.value(forKeyPath: DBC.payeeKey) as? String {
+                            payeeName = payee
                             updateBalace(amount: (debt ?? 0), for: payee)
                         }
                         try managedContext.save()
@@ -167,7 +171,7 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                 let newAmount  = prevAmount + amount
                 result?.setValue(newAmount, forKeyPath: DBC.balanceKey)
                 try managedContext.save()
-                topupDelegate?.didSuccessTopup()
+                topupDelegate?.didSuccessTopup(amount: amountPaidToPayee, transferedToUser: payeeName)
             } else {
                 topupDelegate?.didFailtTopup()
             }

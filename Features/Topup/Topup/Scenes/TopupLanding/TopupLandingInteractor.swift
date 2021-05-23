@@ -7,9 +7,11 @@
 
 import Foundation
 import AuthenticationWorker
+import Common
 class TopupLandingInteractor: TopupLandingPresenterToInteractor {
     weak var presenter: TopupLandingInteractorToPresenter?
     var worker: AuthenticationWorkerProtocol?
+    var appContext: AppContextProtocol? = AppContext.shared
     init(worker: AuthenticationWorkerProtocol?) {
         self.worker = worker
         self.worker?.topupDelegate = self
@@ -21,7 +23,11 @@ class TopupLandingInteractor: TopupLandingPresenterToInteractor {
 }
 
 extension TopupLandingInteractor : TopupAmountProtocol {
-    func didSuccessTopup() {
+    func didSuccessTopup(amount: Double?, transferedToUser: String?) {
+        if let amount = amount, let user = transferedToUser {
+            appContext?.transferedAmount = amount
+            appContext?.transferedTo = user
+        }
         presenter?.didSuccessTopup()
     }
     

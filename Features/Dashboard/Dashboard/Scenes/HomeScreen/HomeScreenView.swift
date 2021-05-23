@@ -14,8 +14,13 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var topupButton: MKUIButton!
     @IBOutlet weak var paymentButton: MKUIButton!
-    @IBOutlet weak var userStatus: UILabel!
+
     @IBOutlet weak var buttonContainer: UIView!
+    @IBOutlet weak var transferLabel: UILabel!
+    @IBOutlet weak var transferLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var debtTable: UITableView!
+    var appContext: AppContextProtocol? = AppContext.shared
+    var viewModel: HomeScreenViewModel?
     var loadingView: MKLoadingView?
     init() {
         super.init(nibName: String(describing: HomeScreenView.self), bundle: Bundle(for: HomeScreenView.self))
@@ -28,20 +33,36 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Home"
+        debtTable.dataSource = self
+        debtTable.backgroundColor = .clear
+        debtTable.register(UINib(nibName: String(describing: DebtTableViewCell.self),
+                                    bundle: Bundle(for: DebtTableViewCell.self)),
+                                    forCellReuseIdentifier: DebtTableViewCell.reuseIdentifier)
+    
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let amount = appContext?.transferedAmount , let transferTo = appContext?.transferedTo {
+            print("Transfered \(amount) to \(transferTo)")
+            self.transferLabel.isHidden = false
+            self.transferLabel.text = "Transferred \(amount) to \(transferTo.capitalized)."
+            self.transferLabelHeight.constant = MKUIConstant.transferLabelHeight
+            appContext?.transferedAmount = nil
+            appContext?.transferedTo = nil
+        } else {
+            self.transferLabel.isHidden = true
+        }
         presenter?.viewWillAppear()
         addLogoutButton()
         decorateBox()
     }
     func decorateBox() {
-        container.backgroundColor = MKColor.white.get()
-        container.layer.cornerRadius = 8.0
-        container.layer.shadowColor = MKColor.greyOverlay.get().cgColor
-        container.layer.shadowOpacity = 1
-        container.layer.shadowOffset = .zero
-        container.layer.shadowRadius = 2
+//        container.backgroundColor = MKColor.white.get()
+//        container.layer.cornerRadius = 8.0
+//        container.layer.shadowColor = MKColor.greyOverlay.get().cgColor
+//        container.layer.shadowOpacity = 1
+//        container.layer.shadowOffset = .zero
+//        container.layer.shadowRadius = 2
         
         buttonContainer.backgroundColor = MKColor.white.get()
         buttonContainer.layer.cornerRadius = 8.0
@@ -54,28 +75,19 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(didTapLogout(_:)))
     }
     func updateView(viewModel: HomeScreenViewModel?) {
+        self.viewModel = viewModel
         self.balance.text = "\(viewModel?.balance ?? 0.0)"
-        self.userName.text = viewModel?.userName
+        self.userName.text = "Hello, \(viewModel?.userName ?? "")!"
         
         print("Hello \(self.userName.text ?? "")\n")
         print("Your Balance is \(viewModel?.balance ?? 0.0)")
-        self.userStatus.isHidden = true
-        viewModel?.debtClients?.forEach({ user in
-            if user.dueAmount ?? 0 > 0 {
-                switch user.status {
-                case .payer:
-                    self.userStatus.isHidden = false
-                    print("You owe \(user.dueAmount ?? 0) to \(user.payerPayee ?? "")")
-                    self.userStatus.text = "You owe \(user.dueAmount ?? 0) to \(user.payerPayee ?? "")"
-                case .payee:
-                    self.userStatus.isHidden = false
-                    print("You owe \(user.dueAmount ?? 0) from \(user.payerPayee ?? "")")
-                    self.userStatus.text = "You owe \(user.dueAmount ?? 0) from \(user.payerPayee ?? "")"
-                default:
-                    break
-                }
-            }
-        })
+        if viewModel?.debtClients?.count ?? 0 > 0 {
+            debtTable.isHidden = false
+            debtTable.reloadData()
+        } else {
+            debtTable.isHidden = true
+        }
+        
     }
     func showLowBalanceAlert() {
         let alert = UIAlertController(title: "Alert", message: "You have insufficient balance, please topup first and try again", preferredStyle: .alert)
@@ -104,4 +116,27 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
         presenter?.paymentButtonTapped()
     }
     
+}
+
+extension HomeScreenView : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel?.debtClients?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row < viewModel?.debtClients?.count ?? 0 {
+            if let debtClient = viewModel?.debtClients?[indexPath.row] {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: DebtTableViewCell.reuseIdentifier) as? DebtTableViewCell {
+                    cell.updateData(user: debtClient)
+                    return cell
+                }
+            }
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }

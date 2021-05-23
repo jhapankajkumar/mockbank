@@ -9,6 +9,10 @@ targets:
     platform: iOS
     sources:
       - Splash
+    dependencies:
+     - framework: '${BUILT_PRODUCTS_DIR}/Common.framework'
+       embed: false
+       codeSign: false
     scheme:
       testTargets:
       - SplashTests

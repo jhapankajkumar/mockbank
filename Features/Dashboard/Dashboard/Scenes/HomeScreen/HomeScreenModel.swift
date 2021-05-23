@@ -9,7 +9,7 @@ public struct HomeScreenViewModel {
         var viewModel = HomeScreenViewModel()
         viewModel.balance = client.balance
         viewModel.userName = client.userName
-        let debtClients = client.debtClients?.map({ client in
+        let debtClients = client.debtClients?.filter({$0.dueAmount ?? 0 > 0}).map({ client in
             return DebtUser.createFrom(debtClient: client)
         })
         viewModel.debtClients = debtClients

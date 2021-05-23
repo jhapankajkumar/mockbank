@@ -29,6 +29,8 @@ public enum MKColor: String {
     case babyBlue = "#B3D8FF"
     case navigationBarColor = "#1E80F0"
     case screenBackgroundColor = "#F9F9F9"
+    case payeeColor = "#DDFCA6"
+    case payerColor = "#F4BCBE"
     public func get() -> UIColor {
         return UIColor.fromHex(hex: self.rawValue)
     }

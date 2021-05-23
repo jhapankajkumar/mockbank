@@ -20,7 +20,7 @@ public protocol UserDataProtocol: AnyObject {
 }
 
 public protocol TopupAmountProtocol: AnyObject {
-    func didSuccessTopup()
+    func didSuccessTopup(amount: Double?, transferedToUser: String?)
     func didFailtTopup()
 }
 

@@ -17,5 +17,7 @@ public class MKUIConstant {
     public static var commonAlpha1: CGFloat = 0.5
     public static var commonAlpha2: CGFloat = 1
     public static var shadowOpacityZero: Float = 0
+    public static let transferLabelHeight: CGFloat = 21
+    public static let zero: CGFloat = 21
     
 }
