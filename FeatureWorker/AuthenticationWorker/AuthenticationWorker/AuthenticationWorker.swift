@@ -131,17 +131,24 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
             let fetchedResults = try managedContext.fetch(debtFetchRequest)
             if fetchedResults.first != nil {
                 let result = fetchedResults.first
-                var balance = result?.value(forKeyPath: DBC.amountKey) as? Double
-                if (balance ?? 0) > 0 {
-                    if balance ?? 0 >= amount {
-                        balance = (balance ?? 0) - amount
-                        result?.setValue(balance, forKeyPath: DBC.amountKey)
+                var debt = result?.value(forKeyPath: DBC.amountKey) as? Double
+                if (debt ?? 0) > 0 {
+                    if debt ?? 0 >= amount {
+                        debt = (debt ?? 0) - amount
+                        result?.setValue(debt, forKeyPath: DBC.amountKey)
                         try managedContext.save()
+                        //update payee balance
+                        if let payee = result?.value(forKeyPath: DBC.payeeKey) as? String {
+                            updateBalace(amount: amount, for: payee)
+                        }
                         topupDelegate?.didSuccessTopup()
                         return
                     } else {
-                        amount = amount - (balance ?? 0)
+                        amount = amount - (debt ?? 0)
                         result?.setValue(0, forKeyPath: DBC.amountKey)
+                        if let payee = result?.value(forKeyPath: DBC.payeeKey) as? String {
+                            updateBalace(amount: (debt ?? 0), for: payee)
+                        }
                         try managedContext.save()
                     }
                 }
@@ -169,7 +176,24 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
             topupDelegate?.didFailtTopup()
         }
     }
-    
+    func updateBalace(amount: Double, for user: String) {
+        let managedContext =
+            DataService.shared.persistentContainer.viewContext
+        let predicate = NSPredicate(format: "\(DBC.nameKey) == %@", user.lowercased())
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: DBConstants.userTable)
+        fetchRequest.predicate = predicate
+        do {
+            let fetchedResults = try managedContext.fetch(fetchRequest)
+            if fetchedResults.first != nil {
+                let result = fetchedResults.first
+                let prevAmount = result?.value(forKeyPath: DBC.balanceKey) as? Double ?? 0
+                let newAmount  = prevAmount + amount
+                result?.setValue(newAmount, forKeyPath: DBC.balanceKey)
+                try managedContext.save()
+            }
+        } catch _ as NSError {}
+    }
     public func fetchUserList() {
         var userList:[Client] = []
         let managedContext =

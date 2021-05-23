@@ -35,7 +35,7 @@ class HomeScreenView: UIViewController, HomeScreenPresenterToView {
         presenter?.viewWillAppear()
     }
     func updateView(viewModel: HomeScreenViewModel?) {
-        self.balance.text = "\(viewModel?.balance ?? 0.0)".amountFormat
+        self.balance.text = "\(viewModel?.balance ?? 0.0)"
         self.userName.text = viewModel?.userName
         
         print("Hello \(self.userName.text ?? "")\n")
