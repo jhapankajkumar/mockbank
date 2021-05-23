@@ -30,8 +30,6 @@ targets:
        embed: true
      - framework: '${BUILT_PRODUCTS_DIR}/AuthenticationWorker.framework'
        embed: true
-       
-      
   MainAppTests:
     type: bundle.unit-test
     platform: iOS
@@ -39,4 +37,48 @@ targets:
       - target: MainApp
     sources:
       - MainAppTests
-    
+
+# project references
+projectReferences:
+  SplashProject:
+    path: ../Features/Splash/Splash.xcodeproj
+  AuthenticationProject:
+    path: ../Features/Authentication/Authentication.xcodeproj
+  DashboardProject:
+    path: ../Features/Dashboard/Dashboard.xcodeproj
+  TopupProject:
+    path: ../Features/Topup/Topup.xcodeproj
+  PaymentProject:
+    path: ../Features/Payment/Payment.xcodeproj
+  
+# Schemes
+schemes:
+  # RELEASE SCHEME
+  MainApp:
+    build:
+      targets:
+        MainApp: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+      - SplashProject/Splash
+      - AuthenticationProject/Authentication
+      - TopupProject/Topup
+      - PaymentProject/Payment
+      - DashboardProject/Dashboard
+      targets:
+      - name: SplashProject/SplashTests
+      - name: AuthenticationProject/AuthenticationTests
+      - name: TopupProject/TopupTests
+      - name: PaymentProject/PaymentTests
+      - name: DashboardProject/DashboardTests
+    profile:
+      config: Release
+    analyze:
+      config: Release
+    archive:
+      config: Release
+  

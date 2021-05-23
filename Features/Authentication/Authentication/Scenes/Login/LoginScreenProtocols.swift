@@ -11,6 +11,7 @@ import Domains
 // MARK: View -
 protocol LoginScreenPresenterToView: AnyObject {
     var presenter: LoginScreenViewToPresenter? { get set }
+    func initialSetup()
     func showError()
 }
 
@@ -32,6 +33,7 @@ protocol LoginScreenViewToPresenter: AnyObject {
     var interactor: LoginScreenPresenterToInteractor? { get set }
     var router: LoginScreenPresenterToRouter? { get set }
     func login(with userName: String)
+    func didLoad()
 }
 
 protocol LoginScreenInteractorToPresenter: AnyObject {

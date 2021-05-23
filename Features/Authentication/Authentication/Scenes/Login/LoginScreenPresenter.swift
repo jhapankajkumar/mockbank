@@ -20,6 +20,10 @@ class LoginScreenPresenter: LoginScreenViewToPresenter {
         user.balance = 0
         interactor?.login(with: user)
     }
+    
+    func didLoad() {
+        view?.initialSetup()
+    }
 }
 
 extension LoginScreenPresenter: LoginScreenInteractorToPresenter {

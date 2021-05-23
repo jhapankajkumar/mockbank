@@ -2,14 +2,15 @@
 platform :ios, '14.0'
 # Workspace
 workspace 'mockbank'
-def shared_common_pod
-    pod 'IQKeyboardManagerSwift', '6.5.5'
-end
 
+# Testing Pods
+def test_pods
+    pod 'Quick'
+    pod 'Nimble'
+end
     
 target 'MainApp' do
   project 'MainApp/MainApp.project'
-  shared_common_pod
   use_frameworks!
 
   # Pods for MainApp
@@ -21,7 +22,6 @@ end
 
 target 'AppNavigations' do
   project 'Navigation/AppNavigations/AppNavigations.project'
-  shared_common_pod
   use_frameworks!
 
   # Pods for AppNavigations
@@ -33,7 +33,6 @@ end
 
 target 'Splash' do
   project 'Features/Splash/Splash.project'
-  shared_common_pod
   use_frameworks!
 
   # Pods for Splash
@@ -45,24 +44,24 @@ end
 
 target 'Authentication' do
   project 'Features/Authentication/Authentication.project'
-  shared_common_pod
-  use_frameworks!
+  use_frameworks! :linkage => :dynamic
 
   # Pods for Authentication
   target 'AuthenticationTests' do
-    inherit! :search_paths
+    inherit! :complete
+    test_pods
     # Pods for testing
   end
 end
 
 target 'Payment' do
   project 'Features/Payment/Payment.project'
-  shared_common_pod
   use_frameworks!
 
   # Pods for Payment
   target 'PaymentTests' do
     inherit! :search_paths
+    test_pods
     # Pods for testing
   end
 end
@@ -70,24 +69,24 @@ end
 
 target 'Topup' do
   project 'Features/Topup/Topup.project'
-  shared_common_pod
-  use_frameworks!
+  use_frameworks! :linkage => :dynamic
 
   # Pods for Topup
   target 'TopupTests' do
-    inherit! :search_paths
+    inherit! :complete
+    test_pods
     # Pods for testing
   end
 end
 
 target 'Dashboard' do
   project 'Features/Dashboard/Dashboard.project'
-  shared_common_pod
   use_frameworks!
 
   # Pods for Dashboard
   target 'DashboardTests' do
     inherit! :search_paths
+    test_pods
     # Pods for testing
   end
 end

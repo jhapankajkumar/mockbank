@@ -24,20 +24,22 @@ class LoginScreenView: UIViewController, LoginScreenPresenterToView {
     }
     
     override func viewDidLoad() {
-        loginButton.isActive = false
-        userNameTextField.delegate = self
         super.viewDidLoad()
-        
-        self.view.backgroundColor = MKColor.screenBackgroundColor.get()
-        
-        decorateBox()
+        presenter?.didLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         self.title = "Login"
     }
+    func initialSetup() {
+        self.view.backgroundColor = MKColor.screenBackgroundColor.get()
+        loginButton.isActive = false
+        userNameTextField.delegate = self
+        decorateBox()
+    }
     func decorateBox() {
+        
         container.decorateView()
         textFieldContainer.decorateView()
     }
