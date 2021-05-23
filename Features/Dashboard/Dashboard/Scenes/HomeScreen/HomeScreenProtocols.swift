@@ -13,6 +13,7 @@ protocol HomeScreenPresenterToView: AnyObject {
     func updateView(viewModel: HomeScreenViewModel?)
     func showLoading()
     func hideLoading()
+    func showLowBalanceAlert()
 }
 
 // MARK: Interactor -

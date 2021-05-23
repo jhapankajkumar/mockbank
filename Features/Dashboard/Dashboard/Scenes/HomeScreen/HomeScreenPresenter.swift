@@ -28,8 +28,10 @@ class HomeScreenPresenter: HomeScreenViewToPresenter {
         }
     }
     func paymentButtonTapped() {
-        if let userData = self.userData {
+        if let userData = self.userData, userData.balance ?? 0 > 0 {
             router?.navigateToPayment(from: view, currentUser: userData)
+        } else {
+            view?.showLowBalanceAlert()
         }
     }
     func logoutButtonTapped() {
@@ -41,9 +43,7 @@ extension HomeScreenPresenter: HomeScreenInteractorToPresenter {
     func didGetUserData(user: Client) {
         self.userData = user
         view?.hideLoading()
-        var viewModel = HomeScreenViewModel()
-        viewModel.balance = user.balance
-        viewModel.userName = user.userName
+        let viewModel = HomeScreenViewModel.createFrom(client: user)
         view?.updateView(viewModel: viewModel)
     }
     

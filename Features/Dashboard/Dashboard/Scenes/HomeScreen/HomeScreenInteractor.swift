@@ -21,7 +21,6 @@ class HomeScreenInteractor: HomeScreenPresenterToInteractor {
     func getUserData(userName: String) {
         self.worker?.getUserData(from: userName)
     }
-    
 }
 
 extension HomeScreenInteractor: UserDataProtocol {

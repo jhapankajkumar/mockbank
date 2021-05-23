@@ -34,16 +34,23 @@ public protocol PaymentProtocol: AnyObject {
     func didFailPayment()
 }
 
+public protocol UserBalanceStatusProtocol: AnyObject {
+    func didGetUserBlanceStatus(status: ClientStatus)
+    func didFailUserBalanceStatus()
+}
+
 public protocol AuthenticationWorkerProtocol: AnyObject {
     var loginDelegate: UserLoginProtocol? {get set}
     var userDataDelegate: UserDataProtocol? {get set}
     var topupDelegate: TopupAmountProtocol? {get set}
     var userListDelegate: FetchUserListProtocol? {get set}
     var paymentDelegate: PaymentProtocol? {get set}
+    var userStatusDelegate: UserBalanceStatusProtocol? {get set}
     
     func doLogin(with user: Client)
     func getUserData(from userName: String)
     func topupAmount(amount: Double, for user: String)
     func fetchUserList()
     func payAmount(amount: Double, fromUser: Client, toUser: Client)
+//    func getUserBalanceStatus(for user: String)
 }
