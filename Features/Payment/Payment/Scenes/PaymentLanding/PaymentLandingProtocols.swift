@@ -10,6 +10,7 @@ import Domains
 // MARK: View -
 protocol PaymentLandingPresenterToView: AnyObject {
     var presenter: PaymentLandingViewToPresenter? { get set }
+    func initialSetup()
     func showLoading()
     func hideLoading()
     func reloadTable()

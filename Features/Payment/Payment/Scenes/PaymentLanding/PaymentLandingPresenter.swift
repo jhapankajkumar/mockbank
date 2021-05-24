@@ -18,6 +18,8 @@ class PaymentLandingPresenter: PaymentLandingViewToPresenter {
         self.currentUser = currentUser
     }
     func viewDidLoad() {
+        view?.initialSetup()
+        view?.showLoading()
         interactor?.fetchUserList()
     }
     

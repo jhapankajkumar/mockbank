@@ -23,10 +23,12 @@ class PaymentLandingView: UIViewController, PaymentLandingPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
+    }
+    func initialSetup() {
         userTable.isHidden = true
         noUserFound.isHidden = true
         self.title = "Payment"
-        presenter?.viewDidLoad()
         userTable.delegate = self
         userTable.dataSource = self
         userTable.register(UINib(nibName: String(describing: UserListTableViewCell.self),
