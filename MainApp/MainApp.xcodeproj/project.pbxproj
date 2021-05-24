@@ -10,6 +10,7 @@
 		00EB219E70FD96141D79C856 /* Authentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A44ABF33814FDD1B01B80E2 /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1588BFD2220785894865614A /* AuthenticationWorker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E020C50E753073244403B917 /* AuthenticationWorker.framework */; };
 		1C6928E1721B0636A25C0A83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BF490DD7799107B2E4C88D4 /* Assets.xcassets */; };
+		2091237759E3F6FA97B24B8C /* Pods_MainAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3EE1659EEAF3CC520E703A /* Pods_MainAppTests.framework */; };
 		2605C062CDAFAC1E712CBC95 /* Dashboard.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D80E1D4D62535AC04F5E235 /* Dashboard.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26BA964FDC49C4D7806D9793 /* Domains.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 808D310196879506E0FE7633 /* Domains.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3AEDBFDD4E1C97AA071A8F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B28B6792B9DE01CB295A70F /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		5BD922C66AD1C9B72677CF0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA667D414468B7B3A3046AA /* ViewController.swift */; };
 		74DA4C2961FBC800B5AD6A12 /* Splash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 71FA467641BCD271C1956C56 /* Splash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7556E62CBAB2BFB6B9814A76 /* MainAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D65F39EEE917AD19F7B9 /* MainAppTests.swift */; };
+		81AABE09671D1A076445882F /* Pods_MainApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA77F38D3CAD6D24E441D0E3 /* Pods_MainApp.framework */; };
 		8299081083245ADD84FFF2D2 /* DataService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B86BD4D9AE271E3CF3D09C1 /* DataService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		844317EF0038C301177CA27A /* AuthenticationWorker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E020C50E753073244403B917 /* AuthenticationWorker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8778205DF73F3C65D1B56B9D /* Domains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808D310196879506E0FE7633 /* Domains.framework */; };
@@ -43,6 +45,76 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5324FC9EFCF7CEA6F5685654;
 			remoteInfo = MainApp;
+		};
+		99F81717265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A6199E664427D6B5FFCA3E5 /* AuthenticationProject */;
+			proxyType = 2;
+			remoteGlobalIDString = 5E5E84C67288009B4D1F5987;
+			remoteInfo = Authentication;
+		};
+		99F81719265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A6199E664427D6B5FFCA3E5 /* AuthenticationProject */;
+			proxyType = 2;
+			remoteGlobalIDString = ECF966923DC42178E33444CC;
+			remoteInfo = AuthenticationTests;
+		};
+		99F8171D265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8000ABE897BA65DFBB520F94 /* DashboardProject */;
+			proxyType = 2;
+			remoteGlobalIDString = BB2EDA737213F2C8BC8F7B42;
+			remoteInfo = Dashboard;
+		};
+		99F8171F265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8000ABE897BA65DFBB520F94 /* DashboardProject */;
+			proxyType = 2;
+			remoteGlobalIDString = C1336A331C471CCA176DBCF5;
+			remoteInfo = DashboardTests;
+		};
+		99F81723265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DF3AC700C00503826E00BCF /* PaymentProject */;
+			proxyType = 2;
+			remoteGlobalIDString = FC99ACB585F8EE0F0E719897;
+			remoteInfo = Payment;
+		};
+		99F81725265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DF3AC700C00503826E00BCF /* PaymentProject */;
+			proxyType = 2;
+			remoteGlobalIDString = 9B90BECC9FF8221C5E49B998;
+			remoteInfo = PaymentTests;
+		};
+		99F81729265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9C5A3322C21B1AE70C2E0C1 /* SplashProject */;
+			proxyType = 2;
+			remoteGlobalIDString = C462627EAD5F3FEC34830717;
+			remoteInfo = Splash;
+		};
+		99F8172B265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9C5A3322C21B1AE70C2E0C1 /* SplashProject */;
+			proxyType = 2;
+			remoteGlobalIDString = 98604FB123C3C77403D85DED;
+			remoteInfo = SplashTests;
+		};
+		99F8172F265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CA523F50EAFF6B5DD08411C /* TopupProject */;
+			proxyType = 2;
+			remoteGlobalIDString = 62E81D4E57822BFE7D7FF670;
+			remoteInfo = Topup;
+		};
+		99F81731265B425600B0ACF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CA523F50EAFF6B5DD08411C /* TopupProject */;
+			proxyType = 2;
+			remoteGlobalIDString = A2B1CE542399555DEBE0B810;
+			remoteInfo = TopupTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -70,30 +142,49 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		060B3A98FC53E8A02C398239 /* MockBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		060B3A98FC53E8A02C398239 /* MainApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B86BD4D9AE271E3CF3D09C1 /* DataService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DataService.framework; path = "${BUILT_PRODUCTS_DIR}/DataService.framework"; sourceTree = "<group>"; };
+		0E3EE1659EEAF3CC520E703A /* Pods_MainAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MainAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F6BA7BAE2A8E01F1E15DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A84D65F39EEE917AD19F7B9 /* MainAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppTests.swift; sourceTree = "<group>"; };
+		22474ADDB34C10A925F8D2C8 /* Pods-MainAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MainAppTests/Pods-MainAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2A44ABF33814FDD1B01B80E2 /* Authentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Authentication.framework; path = "${BUILT_PRODUCTS_DIR}/Authentication.framework"; sourceTree = "<group>"; };
+		2CA523F50EAFF6B5DD08411C /* TopupProject */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TopupProject; path = ../Features/Topup/Topup.xcodeproj; sourceTree = "<group>"; };
+		2DF3AC700C00503826E00BCF /* PaymentProject */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PaymentProject; path = ../Features/Payment/Payment.xcodeproj; sourceTree = "<group>"; };
 		3BF490DD7799107B2E4C88D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D80E1D4D62535AC04F5E235 /* Dashboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dashboard.framework; path = "${BUILT_PRODUCTS_DIR}/Dashboard.framework"; sourceTree = "<group>"; };
 		56A46FD0571773FB88224C7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A6199E664427D6B5FFCA3E5 /* AuthenticationProject */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AuthenticationProject; path = ../Features/Authentication/Authentication.xcodeproj; sourceTree = "<group>"; };
 		6D428482B2EADCE116B30AC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FA35847794CCD7CB593991F /* MainAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MainAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D8C918943FABBE54C5D316 /* Pods-MainAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainAppTests.release.xcconfig"; path = "Target Support Files/Pods-MainAppTests/Pods-MainAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		71FA467641BCD271C1956C56 /* Splash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Splash.framework; path = "${BUILT_PRODUCTS_DIR}/Splash.framework"; sourceTree = "<group>"; };
 		7433E02A3B80F1202B76EE3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		760087988E83C04203BDD7C1 /* Payment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Payment.framework; path = "${BUILT_PRODUCTS_DIR}/Payment.framework"; sourceTree = "<group>"; };
+		7C00E84B8529E305A9AB48EE /* Pods-MainApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainApp.debug.xcconfig"; path = "Target Support Files/Pods-MainApp/Pods-MainApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7CB22A2F73ED47FA62AE6B3E /* Topup.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Topup.framework; path = "${BUILT_PRODUCTS_DIR}/Topup.framework"; sourceTree = "<group>"; };
+		7E43E22E02FA42F05DDBA16E /* Pods-MainApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MainApp.release.xcconfig"; path = "Target Support Files/Pods-MainApp/Pods-MainApp.release.xcconfig"; sourceTree = "<group>"; };
+		8000ABE897BA65DFBB520F94 /* DashboardProject */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DashboardProject; path = ../Features/Dashboard/Dashboard.xcodeproj; sourceTree = "<group>"; };
 		808D310196879506E0FE7633 /* Domains.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Domains.framework; path = "${BUILT_PRODUCTS_DIR}/Domains.framework"; sourceTree = "<group>"; };
 		A222CEAF436C90E68EF336DA /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = "${BUILT_PRODUCTS_DIR}/Common.framework"; sourceTree = "<group>"; };
 		A5136890EBB2E88189FB1EAF /* AppNavigations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppNavigations.framework; path = "${BUILT_PRODUCTS_DIR}/AppNavigations.framework"; sourceTree = "<group>"; };
 		AD1BEA13CC84BCE35689539D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B6A71251670029111484605A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BA77F38D3CAD6D24E441D0E3 /* Pods_MainApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MainApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E020C50E753073244403B917 /* AuthenticationWorker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationWorker.framework; path = "${BUILT_PRODUCTS_DIR}/AuthenticationWorker.framework"; sourceTree = "<group>"; };
 		EBA667D414468B7B3A3046AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9C5A3322C21B1AE70C2E0C1 /* SplashProject */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashProject; path = ../Features/Splash/Splash.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		079F574735A155F0A8EEA61D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2091237759E3F6FA97B24B8C /* Pods_MainAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F10B7C56C888D510DAB8526 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,6 +199,7 @@
 				8778205DF73F3C65D1B56B9D /* Domains.framework in Frameworks */,
 				E5CED0772C9FDC35D18BD5DA /* DataService.framework in Frameworks */,
 				1588BFD2220785894865614A /* AuthenticationWorker.framework in Frameworks */,
+				81AABE09671D1A076445882F /* Pods_MainApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +213,27 @@
 				35BC43A1BED667B54F8D582B /* MainAppTests */,
 				67F182DC08786FF3C82D39E8 /* Frameworks */,
 				73B13978C93862E5AD69BCC8 /* Products */,
+				4E5041A36C08DE7B392E7520 /* Projects */,
+				94FE38E4A9D5DB42CA6CB00D /* Pods */,
 			);
+			sourceTree = "<group>";
+		};
+		0F97EF1B69C1542BDEC1A30D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99F81724265B425600B0ACF9 /* Payment.framework */,
+				99F81726265B425600B0ACF9 /* PaymentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FB3BFF9BE40435B406E5C92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99F8171E265B425600B0ACF9 /* Dashboard.framework */,
+				99F81720265B425600B0ACF9 /* DashboardTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		35BC43A1BED667B54F8D582B /* MainAppTests */ = {
@@ -131,6 +243,27 @@
 				1A84D65F39EEE917AD19F7B9 /* MainAppTests.swift */,
 			);
 			path = MainAppTests;
+			sourceTree = "<group>";
+		};
+		4286B055D9D509A6BAD0ECE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99F81730265B425600B0ACF9 /* Topup.framework */,
+				99F81732265B425600B0ACF9 /* TopupTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E5041A36C08DE7B392E7520 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				5A6199E664427D6B5FFCA3E5 /* AuthenticationProject */,
+				8000ABE897BA65DFBB520F94 /* DashboardProject */,
+				2DF3AC700C00503826E00BCF /* PaymentProject */,
+				F9C5A3322C21B1AE70C2E0C1 /* SplashProject */,
+				2CA523F50EAFF6B5DD08411C /* TopupProject */,
+			);
+			name = Projects;
 			sourceTree = "<group>";
 		};
 		67F182DC08786FF3C82D39E8 /* Frameworks */ = {
@@ -146,6 +279,8 @@
 				760087988E83C04203BDD7C1 /* Payment.framework */,
 				71FA467641BCD271C1956C56 /* Splash.framework */,
 				7CB22A2F73ED47FA62AE6B3E /* Topup.framework */,
+				BA77F38D3CAD6D24E441D0E3 /* Pods_MainApp.framework */,
+				0E3EE1659EEAF3CC520E703A /* Pods_MainAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,8 +288,29 @@
 		73B13978C93862E5AD69BCC8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				060B3A98FC53E8A02C398239 /* MockBank.app */,
+				060B3A98FC53E8A02C398239 /* MainApp.app */,
 				6FA35847794CCD7CB593991F /* MainAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94FE38E4A9D5DB42CA6CB00D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C00E84B8529E305A9AB48EE /* Pods-MainApp.debug.xcconfig */,
+				7E43E22E02FA42F05DDBA16E /* Pods-MainApp.release.xcconfig */,
+				22474ADDB34C10A925F8D2C8 /* Pods-MainAppTests.debug.xcconfig */,
+				71D8C918943FABBE54C5D316 /* Pods-MainAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		AEC21B92B0C5F663772138AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99F81718265B425600B0ACF9 /* Authentication.framework */,
+				99F8171A265B425600B0ACF9 /* AuthenticationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +329,15 @@
 			path = MainApp;
 			sourceTree = "<group>";
 		};
+		D614AC48FF215BB7DDE79631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99F8172A265B425600B0ACF9 /* Splash.framework */,
+				99F8172C265B425600B0ACF9 /* SplashTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +345,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC552B01653A9936969B0459 /* Build configuration list for PBXNativeTarget "MainApp" */;
 			buildPhases = (
+				D6F228C4763F265D8B5C3A3C /* [CP] Check Pods Manifest.lock */,
 				859CDA95B582385AD915556E /* Sources */,
 				7A2B828D287C01FCE173E21A /* Resources */,
 				9F10B7C56C888D510DAB8526 /* Frameworks */,
@@ -191,14 +357,16 @@
 			);
 			name = MainApp;
 			productName = MainApp;
-			productReference = 060B3A98FC53E8A02C398239 /* MockBank.app */;
+			productReference = 060B3A98FC53E8A02C398239 /* MainApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F9EFA312C7A115D0A1871236 /* MainAppTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07BD4C69F82E182FC5798457 /* Build configuration list for PBXNativeTarget "MainAppTests" */;
 			buildPhases = (
+				6A3FFDA2713317B498BC2BF8 /* [CP] Check Pods Manifest.lock */,
 				F61C6BAF6C04156ED01E84A0 /* Sources */,
+				079F574735A155F0A8EEA61D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,7 +395,30 @@
 				Base,
 			);
 			mainGroup = 0767F0D2E9F7C0B23673A1B1;
+			productRefGroup = 73B13978C93862E5AD69BCC8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AEC21B92B0C5F663772138AB /* Products */;
+					ProjectRef = 5A6199E664427D6B5FFCA3E5 /* AuthenticationProject */;
+				},
+				{
+					ProductGroup = 1FB3BFF9BE40435B406E5C92 /* Products */;
+					ProjectRef = 8000ABE897BA65DFBB520F94 /* DashboardProject */;
+				},
+				{
+					ProductGroup = 0F97EF1B69C1542BDEC1A30D /* Products */;
+					ProjectRef = 2DF3AC700C00503826E00BCF /* PaymentProject */;
+				},
+				{
+					ProductGroup = D614AC48FF215BB7DDE79631 /* Products */;
+					ProjectRef = F9C5A3322C21B1AE70C2E0C1 /* SplashProject */;
+				},
+				{
+					ProductGroup = 4286B055D9D509A6BAD0ECE9 /* Products */;
+					ProjectRef = 2CA523F50EAFF6B5DD08411C /* TopupProject */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5324FC9EFCF7CEA6F5685654 /* MainApp */,
@@ -235,6 +426,79 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		99F81718265B425600B0ACF9 /* Authentication.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Authentication.framework;
+			remoteRef = 99F81717265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F8171A265B425600B0ACF9 /* AuthenticationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AuthenticationTests.xctest;
+			remoteRef = 99F81719265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F8171E265B425600B0ACF9 /* Dashboard.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Dashboard.framework;
+			remoteRef = 99F8171D265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F81720265B425600B0ACF9 /* DashboardTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DashboardTests.xctest;
+			remoteRef = 99F8171F265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F81724265B425600B0ACF9 /* Payment.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Payment.framework;
+			remoteRef = 99F81723265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F81726265B425600B0ACF9 /* PaymentTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PaymentTests.xctest;
+			remoteRef = 99F81725265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F8172A265B425600B0ACF9 /* Splash.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Splash.framework;
+			remoteRef = 99F81729265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F8172C265B425600B0ACF9 /* SplashTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SplashTests.xctest;
+			remoteRef = 99F8172B265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F81730265B425600B0ACF9 /* Topup.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Topup.framework;
+			remoteRef = 99F8172F265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99F81732265B425600B0ACF9 /* TopupTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TopupTests.xctest;
+			remoteRef = 99F81731265B425600B0ACF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7A2B828D287C01FCE173E21A /* Resources */ = {
@@ -248,6 +512,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6A3FFDA2713317B498BC2BF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MainAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6F228C4763F265D8B5C3A3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MainApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		859CDA95B582385AD915556E /* Sources */ = {
@@ -300,6 +611,7 @@
 /* Begin XCBuildConfiguration section */
 		0CB811EDB7FEA3DA38A14714 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E43E22E02FA42F05DDBA16E /* Pods-MainApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -312,8 +624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.mockbank;
-				PRODUCT_NAME = MockBank;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.MainApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,6 +632,7 @@
 		};
 		1D49C18BA1863F7874C80650 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22474ADDB34C10A925F8D2C8 /* Pods-MainAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MainAppTests/Info.plist;
@@ -450,6 +762,7 @@
 		};
 		9A963651606AE9EEFCDBC7B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C00E84B8529E305A9AB48EE /* Pods-MainApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -462,8 +775,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.mockbank;
-				PRODUCT_NAME = MockBank;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pankaj.MainApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,6 +783,7 @@
 		};
 		CFA2A6345DA865984D000D81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71D8C918943FABBE54C5D316 /* Pods-MainAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MainAppTests/Info.plist;
