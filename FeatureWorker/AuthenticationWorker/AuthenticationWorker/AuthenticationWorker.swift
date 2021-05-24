@@ -10,7 +10,6 @@ import Domains
 import DataService
 import CoreData
 public class AuthenticationWorker: AuthenticationWorkerProtocol {
-    public weak var userStatusDelegate: UserBalanceStatusProtocol?
     public weak var paymentDelegate: PaymentProtocol?
     public weak var userListDelegate: FetchUserListProtocol?
     public weak var topupDelegate: TopupAmountProtocol?
@@ -221,6 +220,8 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
     
     public func payAmount(amount: Double, fromUser: Client, toUser: Client) {
         if let fromUserName = fromUser.userName, let toUserName = toUser.userName {
+            var payAmount:Double?
+            var payeeName: String?
             if fromUser.balance ?? 0 >= amount {
                 let managedContext = DataService.shared.persistentContainer.viewContext
                 let predicateFromUser = NSPredicate(format: "\(DBC.nameKey) == %@", fromUserName.lowercased())
@@ -253,7 +254,7 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                                 debtBalance = debtBalance - amount
                                 let updateResult = updateReminderToDebtTable(fromUser: toUser, toUser: fromUser, remainderAmount: debtBalance)
                                 if updateResult == true {
-                                    paymentDelegate?.didSuccessPayment()
+                                    paymentDelegate?.didSuccessPayment(acutalTransferredAmount: payAmount, transferredTo: payeeName)
                                 } else {
                                     paymentDelegate?.didFailPayment()
                                 }
@@ -267,9 +268,11 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                                 
                                 let payeeBalance = payee.value(forKeyPath: DBC.balanceKey) as? Double
                                 let payeeNewBalance = (payeeBalance ?? 0) + amount
+                                payAmount = amount
+                                payeeName = payee.value(forKeyPath: DBC.nameKey) as? String
                                 payee.setValue(payeeNewBalance, forKeyPath: DBC.balanceKey)
                                 try managedContext.save()
-                                paymentDelegate?.didSuccessPayment()
+                                paymentDelegate?.didSuccessPayment(acutalTransferredAmount: payAmount, transferredTo: payeeName)
                             }
                         } else {
                             let payerBalance = payer.value(forKeyPath: DBC.balanceKey) as? Double
@@ -278,9 +281,11 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                             
                             let payeeBalance = payee.value(forKeyPath: DBC.balanceKey) as? Double
                             let payeeNewBalance = (payeeBalance ?? 0) + amount
+                            payAmount = amount
+                            payeeName = payee.value(forKeyPath: DBC.nameKey) as? String
                             payee.setValue(payeeNewBalance, forKeyPath: DBC.balanceKey)
                             try managedContext.save()
-                            paymentDelegate?.didSuccessPayment()
+                            paymentDelegate?.didSuccessPayment(acutalTransferredAmount: payAmount, transferredTo: payeeName)
                         }
                         
                     } else {
@@ -324,7 +329,7 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                                 //reduce the further debt
                                 let updateResult = updateReminderToDebtTable(fromUser: toUser, toUser: fromUser, remainderAmount: finalAmountToPay)
                                 if updateResult == true {
-                                    paymentDelegate?.didSuccessPayment()
+                                    paymentDelegate?.didSuccessPayment(acutalTransferredAmount: payAmount, transferredTo: payeeName)
                                 } else {
                                     paymentDelegate?.didFailPayment()
                                 }
@@ -339,6 +344,8 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                                     //update the payee balance
                                     let payeeBalance = payee.value(forKeyPath: DBC.balanceKey) as? Double
                                     let payeeNewBalance = (payeeBalance ?? 0) + finalAmountToPay
+                                    payAmount = finalAmountToPay
+                                    payeeName = payee.value(forKeyPath: DBC.nameKey) as? String
                                     payee.setValue(payeeNewBalance, forKeyPath: DBC.balanceKey)
                                 } else {
                                     let remainderAmount = finalAmountToPay - (balance ?? 0)
@@ -347,22 +354,26 @@ public class AuthenticationWorker: AuthenticationWorkerProtocol {
                                     //update the payee balance
                                     let payeeBalance = payee.value(forKeyPath: DBC.balanceKey) as? Double
                                     let payeeNewBalance = (payeeBalance ?? 0) + (payerBalance ?? 0)
+                                    payAmount = payerBalance
+                                    payeeName = payee.value(forKeyPath: DBC.nameKey) as? String
                                     payee.setValue(payeeNewBalance, forKeyPath: DBC.balanceKey)
                                     _ = updateReminderToDebtTable(fromUser: fromUser, toUser: toUser, remainderAmount: remainderAmount, isAdd: true)
                                 }
                                 try managedContext.save()
-                                paymentDelegate?.didSuccessPayment()
+                                paymentDelegate?.didSuccessPayment(acutalTransferredAmount: payAmount, transferredTo: payeeName)
                             }
                         } else {
                             payer.setValue(0, forKeyPath: DBC.balanceKey)
                             let payeeBalance = payee.value(forKeyPath: DBC.balanceKey) as? Double
                             let payeeNewBalance = (fromUser.balance ?? 0) + (payeeBalance ?? 0)
+                            payAmount = fromUser.balance
+                            payeeName = payee.value(forKeyPath: DBC.nameKey) as? String
                             payee.setValue(payeeNewBalance, forKeyPath: DBC.balanceKey)
                             try managedContext.save()
                             let remainingAmount = amount - (fromUser.balance  ?? 0)
                             let updateResult = updateReminderToDebtTable(fromUser: fromUser, toUser: toUser, remainderAmount: remainingAmount, isAdd: true)
                             if updateResult == true {
-                                paymentDelegate?.didSuccessPayment()
+                                paymentDelegate?.didSuccessPayment(acutalTransferredAmount: payAmount, transferredTo: payeeName)
                             } else {
                                 paymentDelegate?.didFailPayment()
                             }

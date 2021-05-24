@@ -26,6 +26,7 @@ class TopupLandingView: UIViewController, TopupLandingPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.didLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -1,4 +1,4 @@
-name: MainApp
+name: MockBank
 options:
   bundleIdPrefix: com.pankaj
   deploymentTarget:

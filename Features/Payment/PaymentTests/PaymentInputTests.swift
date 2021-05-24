@@ -152,7 +152,7 @@ class PaymentInputTests: QuickSpec {
 
             context("Payment success") {
                 it("when didSuccessPayment is called. function must run successfully") {
-                    sut.didSuccessPayment()
+                    sut.didSuccessPayment(acutalTransferredAmount: nil, transferredTo: nil)
                     expect(presenterMock.didSuccessPaymentCalled).to(beTrue())
                 }
             }

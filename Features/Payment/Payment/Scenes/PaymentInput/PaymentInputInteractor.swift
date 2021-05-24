@@ -8,9 +8,11 @@
 import Foundation
 import AuthenticationWorker
 import Domains
+import Common
 class PaymentInputInteractor: PaymentInputPresenterToInteractor {
     weak var presenter: PaymentInputInteractorToPresenter?
     var worker: AuthenticationWorkerProtocol?
+    var appContext:AppContextProtocol? = AppContext.shared
     init(worker: AuthenticationWorkerProtocol?) {
         self.worker = worker
         self.worker?.paymentDelegate = self
@@ -22,7 +24,11 @@ class PaymentInputInteractor: PaymentInputPresenterToInteractor {
 }
 
 extension PaymentInputInteractor: PaymentProtocol {
-    func didSuccessPayment() {
+    func didSuccessPayment(acutalTransferredAmount: Double?, transferredTo: String?) {
+        if let amount = acutalTransferredAmount, let user = transferredTo {
+            appContext?.transferedAmount = amount
+            appContext?.transferedTo = user
+        }
         presenter?.didSuccessPayment()
     }
     

@@ -54,6 +54,18 @@ target 'Authentication' do
   end
 end
 
+target 'AuthenticationWorker' do
+  project 'FeatureWorker/AuthenticationWorker/AuthenticationWorker.project'
+  use_frameworks! :linkage => :dynamic
+
+  # Pods for Authentication
+  target 'AuthenticationWorkerTests' do
+    inherit! :complete
+    test_pods
+    # Pods for testing
+  end
+end
+
 target 'Payment' do
   project 'Features/Payment/Payment.project'
   use_frameworks!

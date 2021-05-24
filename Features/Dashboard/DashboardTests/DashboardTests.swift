@@ -99,7 +99,6 @@ class AuthenticationWorkerMock: AuthenticationWorkerProtocol {
     
     var paymentDelegate: PaymentProtocol? = nil
     
-    var userStatusDelegate: UserBalanceStatusProtocol? = nil
     func doLogin(with user: Client) {}
     
     var getUserDataCalled = false
