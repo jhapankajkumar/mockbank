@@ -96,29 +96,29 @@ class AuthenticationTests: QuickSpec {
                 sut.router = routerMock
                 sut.interactor = interactorMock
             }
-            context("ViewDidLoad called") {
-                it("ViewDidLoad, function must run successfully") {
+            context("DidLoad called") {
+                it("When didLoad called, function must run successfully") {
                     sut.didLoad()
                     expect(viewMock.initialSetupCalled).to(beTrue())
                 }
             }
             
-            context("Login  called") {
-                it("login, function must run successfully") {
+            context("Login") {
+                it("when login, function must run successfully") {
                     sut.login(with: "Alice")
                     expect(interactorMock.isLoginCalled).to(beTrue())
                 }
             }
             
-            context("Login success called") {
-                it("login success, function must run successfully") {
+            context("Login Success") {
+                it("wehen didSuccessLogin called, user should navigate to Dashboard") {
                     sut.didSuccessLogin()
                     expect(routerMock.isNavigateToDashBoardCalled).to(beTrue())
                 }
             }
             
-            context("Login Failure called") {
-                it("login failed, function must run successfully") {
+            context("Login Failure") {
+                it("when didFailLogin called, function must run successfully") {
                     sut.didFailLogin()
                     expect(viewMock.isShowError).to(beTrue())
                 }
@@ -139,22 +139,22 @@ class AuthenticationTests: QuickSpec {
                 client.userName = "Alice"
             }
 
-            context("Login Called") {
-                it("when Login is called. function must run successfully") {
+            context("Login") {
+                it("when login is called. function must run successfully") {
                     sut.login(with: client)
                     expect(workerMock.loginCalled).to(beTrue())
                 }
             }
             
-            context("Navigate To Dashboard on success login") {
-                it("when Login is success user should navigate to Dashboard.") {
+            context("Login Success") {
+                it("when didSuccessLogin called, User should navigate to Dashboard.") {
                     sut.didSuccessLogin()
                     expect(presenterMock.loginSuccess).to(beTrue())
                 }
             }
             
             context("Login Failed") {
-                it("when Login is success user should navigate to Dashboard.") {
+                it("when didFailLogin is called, user should navigate to Dashboard.") {
                     sut.didFailLogin()
                     expect(presenterMock.loginFailed).to(beTrue())
                 }

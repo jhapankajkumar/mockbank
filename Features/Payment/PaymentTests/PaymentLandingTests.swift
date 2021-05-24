@@ -135,8 +135,8 @@ class PaymentLandingTests: QuickSpec {
                 sut.router = routerMock
                 sut.interactor = interactorMock
             }
-            context("DidLoad called") {
-                it("DidLoad, function must run successfully") {
+            context("DidLoad") {
+                it("When viewDidLoad, function must run successfully") {
                     sut.viewDidLoad()
                     expect(viewMock.showLoadingCalled).to(beTrue())
                     expect(viewMock.initialSetupCalled).to(beTrue())
@@ -144,8 +144,8 @@ class PaymentLandingTests: QuickSpec {
                 }
             }
             
-            context("DidFetchUserLilst  called") {
-                it("When DidFetchUserLilst, function must run successfully") {
+            context("DidFetchUserLilst Success") {
+                it("When didSuccessFetchUserList, function must run successfully") {
                     sut.didSuccessFetchUserList(users: userList)
                     expect(viewMock.hideLoadingCalled).to(beTrue())
                     expect(viewMock.reloadTableCalled).to(beTrue())
@@ -155,24 +155,24 @@ class PaymentLandingTests: QuickSpec {
                 }
             }
             
-            context("DidFetchUserLilst  called no user ") {
-                it("When DidFetchUserLilst, function must run successfully") {
+            context("DidFetchUserLilst  Success no user ") {
+                it("When didSuccessFetchUserList, function must run successfully") {
                     sut.didSuccessFetchUserList(users: [])
                     expect(viewMock.hideLoadingCalled).to(beTrue())
                     expect(viewMock.showNoUserCalled).to(beTrue())
                 }
             }
             
-            context("DidFetchUserLilst  called failed ") {
-                it("When DidFetchUserLilst failed, function must run successfully") {
+            context("DidFetchUserLilst failed ") {
+                it("When didFailFetchUserList failed, function must run successfully") {
                     sut.didFailFetchUserList()
                     expect(viewMock.hideLoadingCalled).to(beTrue())
                     expect(viewMock.showNoUserCalled).to(beTrue())
                 }
             }
             
-            context("Table Row Clicked") {
-                it("When Table Row Clicked, function must run successfully") {
+            context("DidSelectRow") {
+                it("When didSelectRowAtIndexPath, function must run successfully") {
                     sut.didSuccessFetchUserList(users: userList)
                     expect(viewMock.hideLoadingCalled).to(beTrue())
                     expect(viewMock.reloadTableCalled).to(beTrue())
@@ -202,21 +202,21 @@ class PaymentLandingTests: QuickSpec {
             }
 
             context("FetchUserList Called") {
-                it("when GetUserData is called. function must run successfully") {
+                it("when fetchUserList is called. function must run successfully") {
                     sut.fetchUserList()
                     expect(workerMock.isFetchUserListCalled).to(beTrue())
                 }
             }
 
             context("DidFetchUserList success") {
-                it("when DidFetchUserList is called. function must run successfully") {
+                it("when didSuccessFetchUserList is called. function must run successfully") {
                     sut.didSuccessFetchUserList(users: [])
                     expect(presenterMock.fetchUserListCalled).to(beTrue())
                 }
             }
 
             context("DidFetchUserList failed") {
-                it("when DidFetchUserList is called failed. function must run successfully") {
+                it("when didFailToFetchUserList is called failed. function must run successfully") {
                     sut.didFailToFetchUserList()
                     expect(presenterMock.didFailFetchUserListCalled).to(beTrue())
                 }

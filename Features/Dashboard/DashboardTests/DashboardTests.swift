@@ -134,15 +134,15 @@ class DashboardTests: QuickSpec {
                 sut.router = routerMock
                 sut.interactor = interactorMock
             }
-            context("DidLoad called") {
-                it("DidLoad, function must run successfully") {
+            context("DidLoad") {
+                it("When didLoad, function must run successfully") {
                     sut.didLoad()
                     expect(viewMock.initialSetupCalled).to(beTrue())
                 }
             }
             
-            context("ViewWillAppear  called") {
-                it("ViewWillAppear, function must run successfully") {
+            context("ViewWillAppear") {
+                it("When viewWillAppear, function must run successfully") {
                     sut.viewWillAppear()
                     expect(viewMock.setupViewCalled).to(beTrue())
                     expect(viewMock.showLoadingCalled).to(beTrue())
@@ -150,22 +150,22 @@ class DashboardTests: QuickSpec {
                 }
             }
             
-            context("Logout success called") {
-                it("logout success, function must run successfully") {
+            context("Logout success") {
+                it("When logoutButtonTapped called, function must run successfully") {
                     sut.logoutButtonTapped()
                     expect(routerMock.isNavigateToLoginCalled).to(beTrue())
                 }
             }
 
-            context("Topup called failed") {
-                it("Topup failed, function must failed to navigate to topup") {
+            context("Topup failed") {
+                it("When topupButtonTapped, function must failed to navigate to topup") {
                     sut.topupButtonTapped()
                     expect(routerMock.isNavigateToTopupCalled).to(beFalse())
                 }
             }
             
-            context("Topup called success") {
-                it("Topup Success, function must to navigate to topup") {
+            context("Topup success") {
+                it("When topupButtonTapped called, function must to navigate to topup") {
                     var client = Client()
                     client.userName = "Alice"
                     client.balance = 100
@@ -175,16 +175,16 @@ class DashboardTests: QuickSpec {
                 }
             }
             
-            context("Payment called failed") {
-                it("Payment failed, function must failed to navigate to Payment") {
+            context("Payment failed") {
+                it("When paymentButtonTapped called, function must failed to navigate to Payment") {
                     sut.paymentButtonTapped()
                     expect(routerMock.isNavigateToPaymentCalled).to(beFalse())
                     expect(viewMock.showBalanceAlertCalled).to(beTrue())
                 }
             }
             
-            context("Payment called success") {
-                it("Payment Success, function must to navigate to Payment") {
+            context("Payment success") {
+                it("When paymentButtonTapped called, function must to navigate to Payment") {
                     var client = Client()
                     client.userName = "Alice"
                     client.balance = 100
@@ -194,8 +194,8 @@ class DashboardTests: QuickSpec {
                 }
             }
             
-            context("DidGetUserData success") {
-                it("DidGetUserData Success, function must run successfully") {
+            context("GetUserData success") {
+                it("When didGetUserData called, function must run successfully") {
                     var client = Client()
                     client.userName = "Alice"
                     client.balance = 100
@@ -218,7 +218,7 @@ class DashboardTests: QuickSpec {
             }
             
             context("DidGetUserData failed") {
-                it("DidGetUserData Failed, function must run successfully") {
+                it("Wheen didFailTogetUserData called, function must run successfully") {
                     sut.didFailTogetUserData()
                     expect(viewMock.hideLoadingCalled).to(beTrue())
                     expect(viewMock.isShowErrorCalled).to(beTrue())
@@ -241,21 +241,21 @@ class DashboardTests: QuickSpec {
             }
 
             context("GetUserData Called") {
-                it("when GetUserData is called. function must run successfully") {
+                it("when getUserData is called. function must run successfully") {
                     sut.getUserData(userName: "Alice")
                     expect(workerMock.getUserDataCalled).to(beTrue())
                 }
             }
 
             context("DidGetUserData success") {
-                it("when DidGetUserData is called. function must run successfully") {
+                it("when didFetchUserData is called. function must run successfully") {
                     sut.didFetchUserData(user: client)
                     expect(presenterMock.getUserDataCalled).to(beTrue())
                 }
             }
 
             context("DidGetUserData failed") {
-                it("when DidGetUserData is called failed. function must run successfully") {
+                it("when didFailtToFetchUserData is called failed. function must run successfully") {
                     sut.didFailtToFetchUserData()
                     expect(presenterMock.getUserDataFailedCalled).to(beTrue())
                 }

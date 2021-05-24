@@ -95,14 +95,14 @@ class PaymentInputTests: QuickSpec {
                 sut.interactor = interactorMock
             }
             context("DidLoad called") {
-                it("DidLoad, function must run successfully") {
+                it("When didLoad, function must run successfully") {
                     sut.didLoad()
                     expect(viewMock.initialSetupCalled).to(beTrue())
                 }
             }
             
             context("PayAmount called") {
-                it("When PayAmount, function must run successfully") {
+                it("When payAmount, function must run successfully") {
                     sut.payAmount(amount: 100)
                     expect(viewMock.showLoadingCalled).to(beTrue())
                     expect(interactorMock.isPayAmountCalled).to(beTrue())

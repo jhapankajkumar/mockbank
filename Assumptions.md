@@ -1,5 +1,9 @@
 # Mockbank
 
+## Requirements
+1. Xcode 12.5
+2. iOS 14.0 and above
+
 ## Frameworks
 Mock Bank project build on modular architecture.
 In banking we have many modules like `Payment` , `Transfer`, `Topup`, Its better approach to create the farmework for each module. 
