@@ -18,7 +18,11 @@ class PaymentInputPresenter: PaymentInputViewToPresenter {
         self.currentUser = currentUser
         self.payTo = payTo
     }
+    func didLoad() {
+        view?.initialSetup()
+    }
     func payAmount(amount: Double) {
+        view?.showLoading()
         interactor?.payAmount(amount: amount, fromUser: currentUser, toUser: payTo)
     }
 }

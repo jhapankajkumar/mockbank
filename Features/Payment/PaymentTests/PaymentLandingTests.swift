@@ -94,7 +94,10 @@ class AuthenticationWorkerMock: AuthenticationWorkerProtocol {
         isFetchUserListCalled = true
     }
     
-    func payAmount(amount: Double, fromUser: Client, toUser: Client) {}
+    var isPayAmountCalled = false
+    func payAmount(amount: Double, fromUser: Client, toUser: Client) {
+        isPayAmountCalled = true
+    }
 }
 
 class PaymentLandingTests: QuickSpec {

@@ -13,6 +13,7 @@ protocol PaymentInputPresenterToView: AnyObject {
     func showLoading()
     func hideLoading()
     func showError()
+    func initialSetup()
 }
 
 // MARK: Interactor -
@@ -32,6 +33,7 @@ protocol PaymentInputViewToPresenter: AnyObject {
     var view: PaymentInputPresenterToView? { get set }
     var interactor: PaymentInputPresenterToInteractor? { get set }
     var router: PaymentInputPresenterToRouter? { get set }
+    func didLoad()
     func payAmount(amount: Double)
 }
 

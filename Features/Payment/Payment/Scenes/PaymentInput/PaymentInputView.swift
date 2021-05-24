@@ -26,14 +26,16 @@ class PaymentInputView: UIViewController, PaymentInputPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.didLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    func initialSetup() {
+        self.title = "Input Amount"
         payButton.isActive = false
         amountTextField.delegate = self
         amountTextField.keyboardType = .decimalPad
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.title = "Input Amount"
         decorateBox()
     }
     func decorateBox() {
