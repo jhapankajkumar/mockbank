@@ -10,6 +10,7 @@ import UIKit
 // MARK: View -
 protocol TopupLandingPresenterToView: AnyObject {
     var presenter: TopupLandingViewToPresenter? { get set }
+    func initialSetup()
     func showLoading()
     func hideLoading()
     func showError()
@@ -31,6 +32,7 @@ protocol TopupLandingViewToPresenter: AnyObject {
     var view: TopupLandingPresenterToView? { get set }
     var interactor: TopupLandingPresenterToInteractor? { get set }
     var router: TopupLandingPresenterToRouter? { get set }
+    func didLoad()
     func topupAmount(amount: Double)
 }
 

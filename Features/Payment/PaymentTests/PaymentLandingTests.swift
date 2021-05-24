@@ -7,12 +7,9 @@
 
 import Nimble
 import Quick
-import CoreData
 @testable import Payment
 @testable import AuthenticationWorker
-@testable import DataService
 @testable import Domains
-@testable import Common
 
 class PaymentLandingViewMock: PaymentLandingPresenterToView {
     

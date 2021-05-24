@@ -8,12 +8,9 @@
 
 import Nimble
 import Quick
-import CoreData
 @testable import Dashboard
 @testable import AuthenticationWorker
-@testable import DataService
 @testable import Domains
-@testable import Common
 class HomeScreenViewMock: HomeScreenPresenterToView {
     
     var presenter: HomeScreenViewToPresenter?

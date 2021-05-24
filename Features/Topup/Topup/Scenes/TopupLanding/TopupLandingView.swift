@@ -26,13 +26,15 @@ class TopupLandingView: UIViewController, TopupLandingPresenterToView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topupButton.isActive = false
-        amountTextField.delegate = self
-        amountTextField.keyboardType = .decimalPad
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    func initialSetup() {
+        topupButton.isActive = false
+        amountTextField.delegate = self
+        amountTextField.keyboardType = .decimalPad
         self.title = "Topup"
         decorateBox()
     }

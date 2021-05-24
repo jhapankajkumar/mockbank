@@ -7,12 +7,9 @@
 
 import Nimble
 import Quick
-import CoreData
 @testable import Authentication
 @testable import AuthenticationWorker
-@testable import DataService
 @testable import Domains
-@testable import Common
 class LoginScreenViewMock: LoginScreenPresenterToView {
     var initialSetupCalled = false
     func initialSetup() {

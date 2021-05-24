@@ -15,6 +15,9 @@ class TopupLandingPresenter: TopupLandingViewToPresenter {
     init(currentUser: Client) {
         self.currentUser = currentUser
     }
+    func didLoad() {
+        view?.initialSetup()
+    }
     func topupAmount(amount: Double) {
         if let userName = currentUser.userName {
             view?.showLoading()
