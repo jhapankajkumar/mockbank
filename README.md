@@ -3,7 +3,7 @@ A Simple iOS Mock Banking application by modular approach with VIPER architectur
 
 ## Achitecture
 Mock Bank project build on modular architecture.
-Everest iOS already using VIPER Protocol with clean architecture approach. Take a look on VIPER template [GitHub - dgwu/dg-viper-template](https://github.com/dgwu/dg-viper-template) and install on your machine properly.
+Application is using VIPER Protocol with clean architecture approach. Take a look on VIPER template [GitHub - dgwu/dg-viper-template](https://github.com/dgwu/dg-viper-template) and install on your machine properly.
 Current Mock Bank frameworks consist of `Domains`, `Common`, `Data Service`, `Feature Workers`, `Features`, `App Navigations`.
 Since we are using dynamic frameworks it will little bit slow whenever we build for first time of the applications.
 
